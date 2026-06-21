@@ -1,0 +1,584 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAÍZ — Restauración integral de muebles y oficios artesanales</title>
+<meta name="description" content="RAÍZ transforma muebles con memoria en piezas contemporáneas. Restauración integral, esterilla y fibras naturales, rediseño y terminación artesanal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER — navegación fija, se oculta al bajar, aparece al subir
+     ============================================================ -->
+<header class="header" id="header">
+  <div class="envoltura">
+    <a href="index.html" class="logo-raiz logo-header" aria-label="RAÍZ, inicio">
+      <img src="assets/logo-raiz.png" alt="RAÍZ" class="logo-header-img">
+    </a>
+    <nav class="nav-principal">
+      <ul class="nav-links">
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#oficios">Cursos</a></li>
+        <li><a href="#manifiesto">Manifiesto</a></li>
+        <li><a href="#capsula">Cápsula</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        </ul>
+      <a href="#contacto" class="nav-cta"><span>Contacto</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true"><circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle><path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path></svg></a>
+    </nav>
+    <button class="hamburguesa" id="hamburguesa" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Menú móvil de pantalla completa -->
+<div class="menu-movil" id="menuMovil">
+  <ul class="menu-movil-links">
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#oficios">Cursos</a></li>
+    <li><a href="#manifiesto">Manifiesto</a></li>
+    <li><a href="#capsula">Cápsula</a></li>
+    
+</ul>
+  <a href="#contacto" class="btn btn-primary menu-movil-cta">
+    <span>Contanos tu proyecto</span>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true"><circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle><path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path></svg>
+  </a>
+</div>
+
+<!-- ============================================================
+     HERO — composición editorial estática
+     Base visual: título + imagen protagonista + CTA sutil.
+     La animación de transformación por scroll se construirá
+     sobre esta base en una etapa posterior.
+     ============================================================ -->
+<section class="hero" id="hero">
+  <div class="hero-interior">
+
+    <!-- TÍTULO -->
+    <h1 class="hero-titulo">
+  HAY HISTORIAS QUE NO TERMINAN,
+  <br>
+  CAMBIAN DE FORMA
+</h1>
+
+    
+    <figure class="hero-figura">
+      <img
+        src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1800&auto=format&fit=crop"
+        alt="Mueble de madera antiguo con historia — placeholder, reemplazar con imagen propia">
+    </figure>
+
+    <!-- CTA SUTIL: tipográfico, no compite con imagen ni título -->
+    <div class="hero-pie">
+      <a href="#historia" class="hero-cta">
+        <span>Descubrí más</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true"><circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle><path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     HISTORIA — carrusel vertical: texto izquierda · imagen derecha
+     Slides: origen · proceso · resultado
+     JS: script.js sección 8
+     ============================================================ -->
+<section class="seccion historia" id="historia">
+  <div class="envoltura">
+
+    <!-- Columna izquierda: slides de texto apilados (CSS grid) -->
+    <div class="historia-contenido" aria-live="polite" aria-atomic="true">
+
+      <!-- [MODIFICAR] Slide 1: texto de origen -->
+      <article class="historia-slide activo">
+        <span class="ojo historia-eyebrow">01 — Origen</span>
+        <h2 class="titulo-display seccion-titulo">El oficio antes que la marca</h2>
+        <p>RAÍZ nació mucho antes de tener un nombre. Empezó aprendiendo técnicas, observando materiales y entendiendo cómo devolverle vida a piezas que parecían haber llegado a su final.</p>
+      </article>
+
+      <!-- [MODIFICAR] Slide 2: proceso de intervención -->
+      <article class="historia-slide">
+        <span class="ojo historia-eyebrow">02 — Proceso</span>
+        <h2 class="titulo-display seccion-titulo">Intervención con criterio propio</h2>
+        <p>Antes de lijar o barnizar, observamos. Cada pieza recibe un diagnóstico que determina qué conservar, qué reforzar y qué transformar. No hay receta: hay lectura del objeto y decisión fundamentada.</p>
+      </article>
+
+      <!-- [MODIFICAR] Slide 3: resultado final -->
+      <article class="historia-slide">
+        <span class="ojo historia-eyebrow">03 — Resultado</span>
+        <h2 class="titulo-display seccion-titulo">Objetos que siguen contando</h2>
+        <p>El resultado no es una réplica de lo nuevo ni una momificación de lo viejo. Es algo propio: una pieza que integra su historia y encuentra una forma contemporánea de habitarla.</p>
+      </article>
+
+    </div>
+
+    <!-- Columna derecha: imágenes apiladas + controles verticales -->
+    <div class="historia-visual">
+
+      <!-- [MODIFICAR] Reemplazar src con fotos propias de cada etapa -->
+      <div class="historia-imagenes">
+        <div class="historia-imagen-slide activo">
+          <img src="assets/images/origen-foto1.jpeg" alt="Mueble de madera con historia visible">
+        </div>
+        <div class="historia-imagen-slide">
+          <img src="assets/images/origen-foto2.jpeg" alt="Proceso de restauración en el taller">
+        </div>
+        <div class="historia-imagen-slide">
+          <img src="assets/images/origen-foto3.jpeg" alt="Pieza restaurada, terminación final">
+        </div>
+      </div>
+
+      <!-- Controles: arriba · contador · abajo -->
+      <div class="historia-controles">
+        <button class="circulo-nav" id="historiaArriba" aria-label="Slide anterior" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+        <div class="historia-dots" id="historiaDots" aria-label="Seleccionar historia">
+          <button class="activo" type="button" aria-label="Ver origen"></button>
+          <button type="button" aria-label="Ver proceso"></button>
+          <button type="button" aria-label="Ver resultado"></button>
+        </div>
+        <button class="circulo-nav" id="historiaAbajo" aria-label="Slide siguiente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     LABORATORIO DE OFICIOS — 4 cards de servicios/técnicas
+     ============================================================ -->
+<section class="seccion oficios" id="oficios">
+  <div class="envoltura">
+    <div class="oficios-cabecera">
+      <div>
+        <span class="ojo seccion-eyebrow reveal">02 — Nuestros cursos</span>
+        <h2 class="titulo-display seccion-titulo reveal">Taller contemporáneo</h2>
+      </div>
+      
+      <p class="reveal">
+  Cuatro disciplinas que conviven en cada pieza:<br>
+  la técnica, la materia, la forma y el detalle final.
+</p>
+
+    <div class="oficios-grid reveal-fila" id="oficiosGrid">
+      <!-- Card 1: con enlace al curso -->
+      <article class="card-oficio reveal" style="--i:0">
+        <div class="card-oficio-imagen">
+          <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=800&auto=format&fit=crop" alt="Restauración integral de un mueble de madera">
+        </div>
+        <div class="card-oficio-cuerpo">
+          <span class="card-oficio-numero">01</span>
+          <h3 class="card-oficio-titulo">Servicio integral de restauración</h3>
+          <a href="curso-restauracion.html" class="card-oficio-enlace">
+            <span>Ver más</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true"><circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle><path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card-oficio reveal" style="--i:1">
+        <div class="card-oficio-imagen">
+          <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=800&auto=format&fit=crop" alt="Manos tejiendo esterilla con fibras naturales">
+        </div>
+        <div class="card-oficio-cuerpo">
+          <span class="card-oficio-numero">02</span>
+          <h3 class="card-oficio-titulo">Esterilla y fibras naturales</h3>
+          <a href="#contacto" class="card-oficio-enlace">
+            <span>Ver más</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true"><circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle><path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card-oficio reveal" style="--i:2">
+        <div class="card-oficio-imagen">
+          <img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800&auto=format&fit=crop" alt="Rediseño contemporáneo de un mueble antiguo">
+        </div>
+        <div class="card-oficio-cuerpo">
+          <span class="card-oficio-numero">03</span>
+          <h3 class="card-oficio-titulo">Rediseño de muebles</h3>
+          <a href="#contacto" class="card-oficio-enlace">
+            <span>Ver más</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true"><circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle><path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card-oficio reveal" style="--i:3">
+        <div class="card-oficio-imagen">
+          <img src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=800&auto=format&fit=crop" alt="Detalle de terminación y pulido de madera">
+        </div>
+        <div class="card-oficio-cuerpo">
+          <span class="card-oficio-numero">04</span>
+          <h3 class="card-oficio-titulo">Técnicas de terminación</h3>
+          <a href="#contacto" class="card-oficio-enlace">
+            <span>Ver más</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true"><circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle><path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Dots visibles solo en mobile (carrusel) -->
+    <div class="oficios-dots" id="oficiosDots">
+      <button class="activo" data-indice="0" aria-label="Ver oficio 1"></button>
+      <button data-indice="1" aria-label="Ver oficio 2"></button>
+      <button data-indice="2" aria-label="Ver oficio 3"></button>
+      <button data-indice="3" aria-label="Ver oficio 4"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MANIFIESTO — declaración central de marca
+     ============================================================ -->
+<section class="seccion manifiesto" id="manifiesto">
+  <div class="envoltura">
+    <div class="manifiesto-texto">
+      <h2 class="titulo-display manifiesto-titulo reveal">El paradigma de lo vintage cambió.<br><em>No todo es descartable.</em></h2>
+      <p class="manifiesto-secundario reveal">Durante años nos enseñaron que lo nuevo siempre era mejor. Hoy sabemos que no: lo valioso no siempre se reemplaza, a veces se transforma.</p>
+    </div>
+    <figure class="manifiesto-card reveal">
+      <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1100&auto=format&fit=crop" alt="Detalle de un mueble restaurado en madera">
+    </figure>
+  </div>
+</section>
+
+<!-- ============================================================
+     MUEBLES CÁPSULA — galería de 6 proyectos restaurados
+     ============================================================ -->
+<section class="seccion capsula" id="capsula">
+  <div class="envoltura capsula-contenido">
+    <div class="capsula-cabecera">
+      <span class="ojo seccion-eyebrow reveal">03 — Piezas únicas</span>
+      <h2 class="titulo-display seccion-titulo reveal">Muebles cápsula</h2>
+      <p class="capsula-bajada reveal">Una selección de muebles transformados por RAÍZ: objetos con origen, oficio visible y una segunda vida pensada para habitarse.</p>
+    </div>
+
+    <div class="capsula-carousel reveal" aria-label="Historias de transformación de muebles">
+      <button class="circulo-nav capsula-flecha capsula-flecha--prev" type="button" id="capsulaPrev" aria-label="Ver historia anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <div class="capsula-viewport" id="capsulaViewport">
+        <article class="capsula-card is-active" data-capsula-card>
+          <div class="capsula-card__imagen">
+            <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=900&auto=format&fit=crop" alt="Silla Windsor restaurada con madera recuperada">
+          </div>
+          <div class="capsula-card__contenido">
+            <span class="capsula-card__categoria">Silla recuperada</span>
+            <h3>Silla Windsor 1972</h3>
+            <div class="capsula-card__datos">
+              <div>
+                <span>Origen</span>
+                <p>Casa familiar de zona norte</p>
+                <span>Año estimado</span>
+                <p>1972</p>
+                <span>Materiales originales</span>
+                <p>Petiribí macizo y asiento tejido</p>
+              </div>
+              <div>
+                <span>Intervenciones realizadas</span>
+                <ul>
+                  <li>Reparación estructural</li>
+                  <li>Lijado manual</li>
+                  <li>Nuevo acabado mate</li>
+                  <li>Retensado del asiento</li>
+                </ul>
+              </div>
+            </div>
+            <a href="#contacto" class="capsula-card__cta">Ver historia completa</a>
+          </div>
+        </article>
+
+        <article class="capsula-card" data-capsula-card>
+          <div class="capsula-card__imagen">
+            <img src="https://images.unsplash.com/photo-1499933374294-4584851497cc?q=80&w=900&auto=format&fit=crop" alt="Mesa familiar de roble restaurada con veta visible">
+          </div>
+          <div class="capsula-card__contenido">
+            <span class="capsula-card__categoria">Mesa reinterpretada</span>
+            <h3>Mesa Familiar de Roble</h3>
+            <div class="capsula-card__datos">
+              <div>
+                <span>Origen</span>
+                <p>Comedor heredado</p>
+                <span>Año estimado</span>
+                <p>1968</p>
+                <span>Materiales originales</span>
+                <p>Roble, cola animal y herrajes de hierro</p>
+              </div>
+              <div>
+                <span>Intervenciones realizadas</span>
+                <ul>
+                  <li>Reencolado de uniones</li>
+                  <li>Corrección de patas</li>
+                  <li>Lijado profundo</li>
+                  <li>Terminación al agua</li>
+                </ul>
+              </div>
+            </div>
+            <a href="#contacto" class="capsula-card__cta">Ver historia completa</a>
+          </div>
+        </article>
+
+        <article class="capsula-card" data-capsula-card>
+          <div class="capsula-card__imagen">
+            <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?q=80&w=900&auto=format&fit=crop" alt="Biblioteca escandinava restaurada">
+          </div>
+          <div class="capsula-card__contenido">
+            <span class="capsula-card__categoria">Biblioteca restaurada</span>
+            <h3>Biblioteca Escandinava</h3>
+            <div class="capsula-card__datos">
+              <div>
+                <span>Origen</span>
+                <p>Estudio de arquitecto</p>
+                <span>Año estimado</span>
+                <p>1981</p>
+                <span>Materiales originales</span>
+                <p>Guatambú enchapado y vidrio</p>
+              </div>
+              <div>
+                <span>Intervenciones realizadas</span>
+                <ul>
+                  <li>Reconstrucción de estantes</li>
+                  <li>Restauración de cantos</li>
+                  <li>Nuevo acabado satinado</li>
+                  <li>Revisión de guías</li>
+                </ul>
+              </div>
+            </div>
+            <a href="#contacto" class="capsula-card__cta">Ver historia completa</a>
+          </div>
+        </article>
+
+        <article class="capsula-card" data-capsula-card>
+          <div class="capsula-card__imagen">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=900&auto=format&fit=crop" alt="Aparador modernizado con frentes renovados">
+          </div>
+          <div class="capsula-card__contenido">
+            <span class="capsula-card__categoria">Aparador modernizado</span>
+            <h3>Aparador Bruma</h3>
+            <div class="capsula-card__datos">
+              <div>
+                <span>Origen</span>
+                <p>Living de los años setenta</p>
+                <span>Año estimado</span>
+                <p>1975</p>
+                <span>Materiales originales</span>
+                <p>Madera maciza, esterilla y tiradores de bronce</p>
+              </div>
+              <div>
+                <span>Intervenciones realizadas</span>
+                <ul>
+                  <li>Reparación de cajones</li>
+                  <li>Frentes en fibras naturales</li>
+                  <li>Limpieza de herrajes</li>
+                  <li>Rediseño de terminación</li>
+                </ul>
+              </div>
+            </div>
+            <a href="#contacto" class="capsula-card__cta">Ver historia completa</a>
+          </div>
+        </article>
+
+        <article class="capsula-card" data-capsula-card>
+          <div class="capsula-card__imagen">
+            <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=900&auto=format&fit=crop" alt="Butaca tapizada renovada">
+          </div>
+          <div class="capsula-card__contenido">
+            <span class="capsula-card__categoria">Butaca recuperada</span>
+            <h3>Butaca Umbral</h3>
+            <div class="capsula-card__datos">
+              <div>
+                <span>Origen</span>
+                <p>Dormitorio familiar</p>
+                <span>Año estimado</span>
+                <p>1962</p>
+                <span>Materiales originales</span>
+                <p>Guindo, cinchas y tapizado textil</p>
+              </div>
+              <div>
+                <span>Intervenciones realizadas</span>
+                <ul>
+                  <li>Refuerzo de estructura</li>
+                  <li>Nuevo tapizado</li>
+                  <li>Corrección de apoyos</li>
+                  <li>Acabado protector</li>
+                </ul>
+              </div>
+            </div>
+            <a href="#contacto" class="capsula-card__cta">Ver historia completa</a>
+          </div>
+        </article>
+      </div>
+
+      <button class="circulo-nav capsula-flecha capsula-flecha--next" type="button" id="capsulaNext" aria-label="Ver historia siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="capsula-dots" id="capsulaDots" aria-label="Seleccionar historia">
+      <button class="activo" type="button" aria-label="Ver Silla Windsor 1972"></button>
+      <button type="button" aria-label="Ver Mesa Familiar de Roble"></button>
+      <button type="button" aria-label="Ver Biblioteca Escandinava"></button>
+      <button type="button" aria-label="Ver Aparador Bruma"></button>
+      <button type="button" aria-label="Ver Butaca Umbral"></button>
+    </div>
+  </div>
+</section>
+<!-- ============================================================
+     CTA FINAL — banner de cierre con flecha circular
+     ============================================================ -->
+<section class="raiz-marquee">
+  <div class="raiz-marquee__track">
+    <div class="raiz-marquee__content">
+      <span>NO REEMPLACES, TRANSFORMÁ</span>
+      <img class="raiz-marquee__dot" src="assets/images/dot1.png" alt="" aria-hidden="true">
+      <span>NO REEMPLACES, TRANSFORMÁ</span>
+      <img class="raiz-marquee__dot" src="assets/images/dot2.png" alt="" aria-hidden="true">
+      <span>NO REEMPLACES, TRANSFORMÁ</span>
+      <img class="raiz-marquee__dot" src="assets/images/dot3.png" alt="" aria-hidden="true">
+      <span>NO REEMPLACES, TRANSFORMÁ</span>
+      <img class="raiz-marquee__dot" src="assets/images/dot4.png" alt="" aria-hidden="true">
+      <span>NO REEMPLACES, TRANSFORMÁ</span>
+      <img class="raiz-marquee__dot" src="assets/images/dot5.png" alt="" aria-hidden="true">
+    </div>
+
+    <div class="raiz-marquee__content" aria-hidden="true">
+      <span>NO REEMPLACES, TRANSFORMÁ</span>
+      <img class="raiz-marquee__dot" src="assets/images/dot1.png" alt="">
+      <span>NO REEMPLACES, TRANSFORMÁ</span>
+      <img class="raiz-marquee__dot" src="assets/images/dot2.png" alt="">
+      <span>NO REEMPLACES, TRANSFORMÁ</span>
+      <img class="raiz-marquee__dot" src="assets/images/dot3.png" alt="">
+      <span>NO REEMPLACES, TRANSFORMÁ</span>
+      <img class="raiz-marquee__dot" src="assets/images/dot4.png" alt="">
+      <span>NO REEMPLACES, TRANSFORMÁ</span>
+      <img class="raiz-marquee__dot" src="assets/images/dot5.png" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VIDEO CARD
+     ============================================================ -->
+<section class="video-card-section">
+  <div class="video-card">
+    <video class="video-card__media" controls preload="metadata">
+      <source src="assets/videos/mi-video.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+
+    <button class="video-card__play" aria-label="Reproducir video">
+      <span aria-hidden="true">▶</span>
+    </button>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="envoltura">
+
+    <!-- [MODIFICAR] Columnas: logo/redes | servicios | explorar | formulario -->
+    <div class="footer-top">
+
+      <div class="footer-marca">
+        <video class="footer-marca-video" autoplay muted playsinline preload="metadata" aria-label="Animación RAÍZ">
+          <source src="assets/videos/video-silla1.mp4" type="video/mp4">
+        </video>
+        <div class="footer-redes">
+          <!-- [MODIFICAR] Reemplazar href="#" con URLs reales de redes sociales -->
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.318.92.598.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.598-.92c-.11-.281-.24-.705-.275-1.485-.039-.843-.046-1.096-.046-3.232s.007-2.388.046-3.231c.035-.78.166-1.204.275-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.713-.663 2.664-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-columna">
+        <!-- [MODIFICAR] Links de servicios -->
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#oficios">Restauración integral</a></li>
+          <li><a href="curso-restauracion.html">Cursos</a></li>
+          <li><a href="#capsula">Casos reales</a></li>
+          <li><a href="#contacto">Solicitar presupuesto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-columna">
+        <!-- [MODIFICAR] Links de navegación secundaria -->
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="#hero">Sobre RAÍZ</a></li>
+          <li><a href="#manifiesto">Manifiesto</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-form" id="footerForm">
+        <!-- [MODIFICAR] Texto del label y placeholder del formulario -->
+        <label for="inputProyecto">¿Qué pieza querés transformar?</label>
+        <form id="formularioProyecto">
+          <div class="footer-form-fila">
+            <input type="text" id="inputProyecto" placeholder="Contanos tu proyecto" required>
+            <button type="submit" aria-label="Enviar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </form>
+        <p class="footer-msg" id="footerMsg"></p>
+      </div>
+
+    </div><!-- /footer-top -->
+
+    
+    
+
+    <!-- Logo grande RAÍZ + botón volver arriba -->
+    <div class="footer-logo-fila">
+  <img src="assets/logo-raiz.png" alt="RAÍZ" class="footer-logo-img">
+
+  <button class="circulo-nav" id="footerArriba" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+</div>
+
+  </div><!-- /envoltura -->
+
+  <!-- [MODIFICAR] Año y texto de copyright -->
+  <div class="footer-bottom">
+    <p>© 2026 RAÍZ. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- Botón flotante volver arriba -->
+<button class="volver-arriba" id="volverArriba" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+/* ============================================================
+   RAÍZ — curso.css
+   Estilos específicos de curso-restauracion.html.
+   Usa los mismos tokens definidos en style.css.
+   ============================================================ */
+
+/* ---------- HERO DEL CURSO ---------- */
+.curso-hero{
+  padding-top: 9rem;
+  padding-bottom: var(--espacio-l);
+  background: var(--crema);
+}
+.curso-hero-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-l);
+  align-items: center;
+}
+.curso-eyebrow{
+  color: var(--naranja);
+  display: block;
+  margin-bottom: var(--espacio-s);
+}
+.curso-hero-titulo{
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  max-width: 16ch;
+  margin-bottom: var(--espacio-m);
+}
+.curso-hero-bajada{
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--negro-suave);
+  max-width: 36ch;
+}
+.curso-hero-acciones{
+  display: flex;
+  gap: var(--espacio-s);
+  margin-top: var(--espacio-m);
+  flex-wrap: wrap;
+}
+.curso-hero-imagen{
+  aspect-ratio: 4/5;
+  border-radius: var(--radio-organico);
+  overflow: hidden;
+}
+.curso-hero-imagen img{ width: 100%; height: 100%; object-fit: cover; }
+
+.curso-datos-rapidos{
+  margin-top: var(--espacio-xl);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--espacio-s);
+  border-top: 1px solid rgba(20,19,15,.15);
+  padding-top: var(--espacio-m);
+}
+.dato-rapido{
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+.dato-numero{
+  font-family: var(--f-display);
+  font-size: 2.2rem;
+  color: var(--naranja);
+}
+.dato-label{
+  font-family: var(--f-body);
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--negro-suave);
+}
+
+/* ---------- PRESENTACIÓN ---------- */
+.curso-presentacion-grid{
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: var(--espacio-l);
+  align-items: start;
+}
+.curso-presentacion-grid p{
+  font-size: 1.1rem;
+  color: var(--negro-suave);
+}
+
+/* ---------- QUÉ INCLUYE ---------- */
+.curso-incluye{ background: var(--crema-alta); }
+.incluye-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--espacio-m);
+}
+.incluye-item{
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  padding: var(--espacio-m);
+  background: var(--crema);
+  border-radius: var(--radio-organico-2);
+  transition: transform var(--t-rapida);
+}
+.incluye-item:hover{ transform: translateY(-6px); }
+.incluye-icono{
+  width: 3rem; height: 3rem;
+  border-radius: 50%;
+  background: var(--lila-baja);
+  color: var(--negro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.incluye-icono svg{ width: 1.4rem; height: 1.4rem; }
+.incluye-item h3{
+  font-family: var(--f-display);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+}
+.incluye-item p{
+  font-size: .95rem;
+  color: var(--negro-suave);
+}
+
+/* ---------- MÓDULOS (acordeón) ---------- */
+.curso-modulos{ background: var(--oliva); color: var(--crema); }
+.modulos-lista{
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(242,237,227,.2);
+}
+.modulo-item{
+  border-bottom: 1px solid rgba(242,237,227,.2);
+}
+.modulo-item summary{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-m);
+  padding: var(--espacio-m) 0;
+  cursor: pointer;
+  font-family: var(--f-display);
+}
+.modulo-item summary::-webkit-details-marker{ display: none; }
+.modulo-numero{
+  font-size: .85rem;
+  color: var(--lila);
+  flex-shrink: 0;
+  width: 2.4rem;
+}
+.modulo-titulo{
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  flex: 1;
+}
+.modulo-flecha{
+  width: 2.4rem; height: 2.4rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--crema);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--t-rapida), border-radius var(--t-media);
+}
+.modulo-item[open] .modulo-flecha{ transform: rotate(180deg); background: var(--naranja); border-color: var(--naranja); }
+.modulo-flecha svg{ width: 1rem; height: 1rem; }
+.modulo-item p{
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--salvia-baja);
+  padding-bottom: var(--espacio-m);
+  padding-left: 2.4rem;
+  max-width: 60ch;
+}
+
+/* ---------- DETALLES (duración / modalidad / materiales) ---------- */
+.detalles-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-m);
+}
+.detalle-card{
+  padding: var(--espacio-m);
+  border: 1.5px solid rgba(20,19,15,.15);
+  border-radius: var(--radio-organico);
+}
+.detalle-card .ojo{ color: var(--naranja); }
+.detalle-valor{
+  font-family: var(--f-display);
+  font-size: 1.8rem;
+  margin: .5rem 0;
+  text-transform: uppercase;
+}
+.detalle-texto{
+  font-size: .95rem;
+  color: var(--negro-suave);
+}
+
+/* ---------- PARA QUIÉN / BENEFICIOS ---------- */
+.curso-quien{ background: var(--crema-alta); }
+.curso-quien-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-l);
+}
+.lista-quien, .lista-beneficios{
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+}
+.lista-quien li, .lista-beneficios li{
+  font-size: 1.02rem;
+  padding-left: 1.6rem;
+  position: relative;
+  color: var(--negro-suave);
+}
+.lista-quien li::before{
+  content: '';
+  position: absolute;
+  left: 0; top: .5em;
+  width: .55rem; height: .55rem;
+  border-radius: 50%;
+  background: var(--salvia);
+}
+.lista-beneficios li::before{
+  content: '';
+  position: absolute;
+  left: 0; top: .5em;
+  width: .55rem; height: .55rem;
+  border-radius: 50%;
+  background: var(--naranja);
+}
+.lista-beneficios strong{
+  color: var(--negro);
+  font-weight: 600;
+}
+
+/* ---------- RESPONSIVE TABLET ---------- */
+@media (max-width: 1024px){
+  .curso-hero-grid{ grid-template-columns: 1fr; }
+  .curso-hero-imagen{ order: -1; aspect-ratio: 16/10; }
+  .curso-datos-rapidos{ grid-template-columns: repeat(2, 1fr); gap: var(--espacio-m); }
+  .curso-presentacion-grid{ grid-template-columns: 1fr; gap: var(--espacio-m); }
+  .incluye-grid{ grid-template-columns: repeat(2, 1fr); }
+  .detalles-grid{ grid-template-columns: 1fr; }
+  .curso-quien-grid{ grid-template-columns: 1fr; gap: var(--espacio-m); }
+}
+
+/* ---------- RESPONSIVE MOBILE ---------- */
+@media (max-width: 720px){
+  .curso-hero{ padding-top: 7.5rem; }
+  .curso-datos-rapidos{ grid-template-columns: 1fr 1fr; }
+  .incluye-grid{ grid-template-columns: 1fr; }
+  .modulo-titulo{ font-size: 1rem; }
+  .modulo-item p{ padding-left: 0; margin-top: .5rem; }
+}
