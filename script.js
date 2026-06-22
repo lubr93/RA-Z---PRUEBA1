@@ -7,51 +7,56 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---------- 0. HERO EDITORIAL: palabra activa + fallback de imagen ---------- */
-  const heroPalabras = Array.from(document.querySelectorAll('.hero-palabra'));
-  const heroObjetos = Array.from(document.querySelectorAll('.hero-objeto'));
+  /* ---------- 0. HERO ANIMADO ---------- */
+  const words = document.querySelectorAll('.hero .word-slide');
+  const bgs = document.querySelectorAll('.hero .bg-float');
+  const finale = document.querySelector('.hero .finale');
   const hero = document.querySelector('.hero');
-  let heroEstadoIndice = 0;
+  let hasShownHeroCta = false;
 
-  heroObjetos.forEach((objeto) => {
-    const imagen = objeto.querySelector('img');
-    if (!imagen) return;
-    imagen.addEventListener('error', () => {
-      const fallbackSrc = imagen.dataset.fallbackSrc;
-      if (!fallbackSrc || imagen.src.includes(fallbackSrc)) return;
-      imagen.src = fallbackSrc;
-      imagen.classList.add('hero-mueble--fallback');
-    });
-  });
+  const HOLD = 1100;
+  const GAP = 250;
+  const LOOP_PAUSE = 2600;
 
-  if (heroPalabras.length > 1) {
-    window.setInterval(() => {
-      const palabraActual = heroPalabras[heroEstadoIndice];
-      const objetoActual = heroObjetos[heroEstadoIndice];
-      const proximoIndice = (heroEstadoIndice + 1) % heroPalabras.length;
-      const palabraProxima = heroPalabras[proximoIndice];
-      const objetoProximo = heroObjetos[proximoIndice];
-
-      palabraActual.classList.remove('activa');
-      palabraActual.classList.add('saliente');
-      palabraProxima.classList.add('activa');
-
-      if (objetoActual && objetoProximo) {
-        objetoActual.classList.remove('activa');
-        objetoActual.classList.add('saliente');
-        objetoProximo.classList.add('activa');
-      }
-
-      if (hero && proximoIndice === heroPalabras.length - 1) hero.classList.add('hero--final');
-
-      window.setTimeout(() => {
-        palabraActual.classList.remove('saliente');
-        if (objetoActual) objetoActual.classList.remove('saliente');
-      }, 760);
-
-      heroEstadoIndice = proximoIndice;
-    }, 2400);
+  function showWord(el, delay) {
+    setTimeout(() => {
+      el.classList.add('in');
+      setTimeout(() => {
+        el.classList.remove('in');
+        el.classList.add('out');
+      }, HOLD);
+    }, delay);
   }
+
+  function runHeroAnimation() {
+    words.forEach((w) => w.classList.remove('in', 'out'));
+    bgs.forEach((b) => b.classList.remove('in'));
+    if (finale) finale.classList.remove('in');
+
+    bgs.forEach((b, i) => {
+      setTimeout(() => { b.classList.add('in'); }, 200 + i * 150);
+    });
+
+    let t = 150;
+    words.forEach((w) => {
+      showWord(w, t);
+      t += HOLD + GAP;
+    });
+
+    if (finale) {
+      setTimeout(() => {
+        finale.classList.add('in');
+        if (!hasShownHeroCta && hero) {
+          hero.classList.add('hero--cta-locked');
+          hasShownHeroCta = true;
+        }
+      }, t);
+    }
+
+    setTimeout(runHeroAnimation, t + LOOP_PAUSE);
+  }
+
+  runHeroAnimation();
 
   /* ---------- 1. MENÚ HAMBURGUESA ---------- */
   const hamburguesa = document.getElementById('hamburguesa');
@@ -110,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ultimoScroll = scrollActual;
 
     actualizarBotonVolverArriba(scrollActual);
-    actualizarHero();
   }, { passive: true });
 
   /* ---------- 4. BOTÓN VOLVER ARRIBA (flotante) ---------- */
@@ -153,67 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     elementosReveal.forEach((el) => el.classList.add('visible'));
   }
 
-  /* ---------- 6. HERO: transformación narrativa por scroll ---------- */
-  const heroScrollContenedor = document.querySelector('.hero-scroll-contenedor');
-  const capaAntes    = document.querySelector('.hero-capa--antes');
-  const capaProceso  = document.querySelector('.hero-capa--proceso');
-  const capaDespues  = document.querySelector('.hero-capa--despues');
-  const heroCta      = document.getElementById('heroCta');
-  const heroCtaBoton = document.getElementById('heroCtaBoton');
-  const heroEtiqueta = document.getElementById('heroEtiqueta');
-
-  // Usuarios con prefers-reduced-motion: mostrar estado final sin scroll extra
-  const motionReducida = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (motionReducida && heroScrollContenedor) {
-    heroScrollContenedor.style.height = '100vh';
-    if (capaAntes)    capaAntes.style.opacity  = '0';
-    if (capaDespues)  capaDespues.style.opacity = '1';
-    if (heroCta)      { heroCta.classList.add('hero-cta--visible'); heroCta.setAttribute('aria-hidden', 'false'); }
-    if (heroCtaBoton) heroCtaBoton.removeAttribute('tabindex');
-    if (heroEtiqueta) heroEtiqueta.classList.add('hero-etiqueta--visible');
-  }
-
-  function actualizarHero() {
-    if (!heroScrollContenedor || motionReducida) return;
-
-    const rect       = heroScrollContenedor.getBoundingClientRect();
-    const disponible = heroScrollContenedor.offsetHeight - window.innerHeight;
-    const scrolled   = Math.max(0, -rect.top);
-    const p          = Math.min(1, scrolled / disponible); // progreso 0 → 1
-
-    /* Ventanas de opacidad por capa:
-       antes:   visible 0.00—0.30 | fade-out 0.30—0.45
-       proceso: fade-in 0.35—0.50 | visible 0.50—0.55 | fade-out 0.55—0.70
-       después: fade-in 0.60—0.75 | visible 0.75—1.00              */
-    const oAntes   = p < 0.30 ? 1 : p > 0.45 ? 0 : 1 - (p - 0.30) / 0.15;
-    const oProceso = p < 0.35 ? 0 : p < 0.50 ? (p - 0.35) / 0.15
-                   : p < 0.55 ? 1 : p > 0.70 ? 0 : 1 - (p - 0.55) / 0.15;
-    const oDespues = p < 0.60 ? 0 : p > 0.75 ? 1 : (p - 0.60) / 0.15;
-
-    if (capaAntes)   capaAntes.style.opacity   = oAntes;
-    if (capaProceso) capaProceso.style.opacity = oProceso;
-    if (capaDespues) capaDespues.style.opacity = oDespues;
-
-    // CTA: aparece cuando la transformación está prácticamente completa
-    if (heroCta) {
-      const ctaVisible = p >= 0.85;
-      heroCta.classList.toggle('hero-cta--visible', ctaVisible);
-      heroCta.setAttribute('aria-hidden', ctaVisible ? 'false' : 'true');
-      if (heroCtaBoton) {
-        if (ctaVisible) heroCtaBoton.removeAttribute('tabindex');
-        else            heroCtaBoton.setAttribute('tabindex', '-1');
-      }
-    }
-
-    // Etiqueta: aparece junto con la imagen restaurada
-    if (heroEtiqueta) {
-      heroEtiqueta.classList.toggle('hero-etiqueta--visible', oDespues > 0.6);
-    }
-  }
-
-  actualizarHero(); // inicializar si la página ya tiene scroll al cargar
-
-  /* ---------- 7. VIDEO CARD ---------- */
+  /* ---------- 6. VIDEO CARD ---------- */
   const videoCard = document.querySelector('.video-card');
   const videoCardMedia = document.querySelector('.video-card__media');
   const videoCardPlay = document.querySelector('.video-card__play');
