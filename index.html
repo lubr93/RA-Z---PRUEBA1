@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=Archivo+Expanded:wght@700;800;900&family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/fam1two.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,44 +19,15 @@
 <header class="header" id="header">
   <div class="envoltura">
     <a href="index.html" class="logo-raiz logo-header" aria-label="RAÍZ, inicio">
-      <img src="assets/logo-raiz.png" alt="RAÍZ" class="logo-header-img">
+      RAÍZ
     </a>
-    <nav class="nav-principal">
-      <ul class="nav-links">
-        <li><a href="#historia">Historia</a></li>
-        <li><a href="#oficios">Cursos</a></li>
-        <li><a href="#manifiesto">Manifiesto</a></li>
-        <li><a href="#capsula">Cápsula</a></li>
-        <li><a href="#galeria">Galería</a></li>
-        </ul>
-      <a href="#contacto" class="nav-cta"><span>Contacto</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true"><circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle><path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path></svg></a>
-    </nav>
-    <button class="hamburguesa" id="hamburguesa" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="menu-toggle" type="button" aria-controls="siteMenu" aria-expanded="false">
+      <span>MENU</span>
     </button>
   </div>
 </header>
 
-<!-- Menú móvil de pantalla completa -->
-<div class="menu-movil" id="menuMovil">
-  <ul class="menu-movil-links">
-    <li><a href="#historia">Historia</a></li>
-    <li><a href="#oficios">Cursos</a></li>
-    <li><a href="#manifiesto">Manifiesto</a></li>
-    <li><a href="#capsula">Cápsula</a></li>
-    
-</ul>
-  <a href="#contacto" class="btn btn-primary menu-movil-cta">
-    <span>Contanos tu proyecto</span>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true"><circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle><path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path></svg>
-  </a>
-</div>
-
 <section class="hero" id="hero">
-
-  <div class="bg-float bg1"><img src="assets/images/dot6.png" alt="" aria-hidden="true"></div>
-  <div class="bg-float bg2"><img src="assets/images/dot2.png" alt="" aria-hidden="true"></div>
-  <div class="bg-float bg3"><img src="assets/images/dot3.png" alt="" aria-hidden="true"></div>
 
   <div class="stage">
 
@@ -82,7 +54,9 @@
 
     <div class="finale">
       <div class="finale-logo">RAÍZ</div>
-      <div class="finale-sub">No reemplaces. Transformá.</div>
+      <div class="finale-kicker">DALE A TU PIEZA UNA SEGUNDA OPORTUNIDAD</div>
+      
+      
     </div>
 
   </div>
@@ -104,23 +78,23 @@
 
       <!-- [MODIFICAR] Slide 1: texto de origen -->
       <article class="historia-slide activo">
-        <span class="ojo historia-eyebrow">01 — Origen</span>
+        <span class="ojo historia-eyebrow">01 — Historia</span>
         <h2 class="titulo-display seccion-titulo">El oficio antes que la marca</h2>
         <p>RAÍZ nació mucho antes de tener un nombre. Empezó aprendiendo técnicas, observando materiales y entendiendo cómo devolverle vida a piezas que parecían haber llegado a su final.</p>
       </article>
 
       <!-- [MODIFICAR] Slide 2: proceso de intervención -->
       <article class="historia-slide">
-        <span class="ojo historia-eyebrow">02 — Proceso</span>
-        <h2 class="titulo-display seccion-titulo">Intervención con criterio propio</h2>
-        <p>Antes de lijar o barnizar, observamos. Cada pieza recibe un diagnóstico que determina qué conservar, qué reforzar y qué transformar. No hay receta: hay lectura del objeto y decisión fundamentada.</p>
+        <span class="ojo historia-eyebrow">01 — Historia</span>
+        <h2 class="titulo-display seccion-titulo">Mirar antes de intervenir</h2>
+        <p>Cada mueble que llega pasa por el mismo filtro: ¿qué se conserva, qué se refuerza, qué se transforma? No hay receta única. Hay una pieza con su propia historia estructural, y una decisión que se toma recién después de leerla bien. Las manos hacen el resto.</p>
       </article>
 
       <!-- [MODIFICAR] Slide 3: resultado final -->
       <article class="historia-slide">
-        <span class="ojo historia-eyebrow">03 — Resultado</span>
+        <span class="ojo historia-eyebrow">01 — Historia</span>
         <h2 class="titulo-display seccion-titulo">Objetos que siguen contando</h2>
-        <p>El resultado no es una réplica de lo nuevo ni una momificación de lo viejo. Es algo propio: una pieza que integra su historia y encuentra una forma contemporánea de habitarla.</p>
+        <p>El resultado no es una réplica de lo nuevo ni una momificación de lo viejo. Hoy restauramos lo que otros dan por perdido. No lo disfrazamos de nuevo. Dejamos ver lo que vivió, y le sumamos lo que todavía le queda por vivir.</p>
       </article>
 
     </div>
@@ -167,8 +141,10 @@
 <section class="seccion manifiesto" id="manifiesto">
   <div class="envoltura">
     <div class="manifiesto-texto">
-      <h2 class="titulo-display manifiesto-titulo reveal">El paradigma de lo vintage cambió.<br><em>No todo es descartable.</em></h2>
-      <p class="manifiesto-secundario reveal">Durante años nos enseñaron que lo nuevo siempre era mejor. Hoy sabemos que no: lo valioso no siempre se reemplaza, a veces se transforma.</p>
+      <span class="ojo manifiesto-eyebrow reveal">02 — Manifiesto</span>
+      <h2 class="titulo-display manifiesto-titulo reveal">Raíz no es nostalgia.<br><em>Es estructura.</em></h2>
+      <p class="manifiesto-secundario reveal">Una raíz no se reemplaza. Se nutre. Desde ahí crece todo lo demás. ¿Por qué  restaurar? Porque descartar es rápido,no es inteligente. ¿Por qué no producir más? Porque el problema nunca fue la escasez de muebles. Es un sistema que te convence de que comprar es más fácil que arreglar lo que tenés.
+Producir desde cero cuando ya existe algo que funciona no es progreso. Es indolencia disfrazada de innovación. </p>
     </div>
     <figure class="manifiesto-card reveal">
       <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1100&auto=format&fit=crop" alt="Detalle de un mueble restaurado en madera">
@@ -183,8 +159,8 @@
   <div class="envoltura">
     <div class="oficios-cabecera">
       <div>
-        <span class="ojo seccion-eyebrow reveal">02 — Nuestros cursos</span>
-        <h2 class="titulo-display seccion-titulo reveal">Taller contemporáneo</h2>
+        <span class="ojo seccion-eyebrow">03 — Nuestros cursos</span>
+        <h2 class="titulo-display seccion-titulo reveal">Taller creativo</h2>
       </div>
       
       <p class="reveal">
@@ -211,7 +187,7 @@
       <!-- Card 2 -->
       <article class="card-oficio reveal" style="--i:1">
         <div class="card-oficio-imagen">
-          <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=800&auto=format&fit=crop" alt="Manos tejiendo esterilla con fibras naturales">
+          <img src="assets/images/curso2.jpeg" alt="Manos tejiendo esterilla con fibras naturales">
         </div>
         <div class="card-oficio-cuerpo">
           <span class="card-oficio-numero">02</span>
@@ -226,7 +202,7 @@
       <!-- Card 3 -->
       <article class="card-oficio reveal" style="--i:2">
         <div class="card-oficio-imagen">
-          <img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800&auto=format&fit=crop" alt="Rediseño contemporáneo de un mueble antiguo">
+          <img src="assets/images/curso3.jpeg" alt="Rediseño contemporáneo de un mueble antiguo">
         </div>
         <div class="card-oficio-cuerpo">
           <span class="card-oficio-numero">03</span>
@@ -241,11 +217,11 @@
       <!-- Card 4 -->
       <article class="card-oficio reveal" style="--i:3">
         <div class="card-oficio-imagen">
-          <img src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=800&auto=format&fit=crop" alt="Detalle de terminación y pulido de madera">
+          <img src="assets/images/curso4.jpeg" alt="Detalle de terminación y pulido de madera">
         </div>
         <div class="card-oficio-cuerpo">
           <span class="card-oficio-numero">04</span>
-          <h3 class="card-oficio-titulo">COLOR Y SUPERFICIES</h3>
+          <h3 class="card-oficio-titulo">COLOR E INTERVENCIÓN</h3>
           <a href="#contacto" class="card-oficio-enlace">
             <span>Ver más</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true"><circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle><path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path></svg>
@@ -270,9 +246,9 @@
 <section class="seccion capsula" id="capsula">
   <div class="envoltura capsula-contenido">
     <div class="capsula-cabecera">
-      <span class="ojo seccion-eyebrow reveal">03 — Piezas únicas</span>
+      <span class="ojo seccion-eyebrow reveal">04 — Edición limitada</span>
       <h2 class="titulo-display seccion-titulo reveal">Muebles cápsula</h2>
-      <p class="capsula-bajada reveal">Una selección de muebles transformados por RAÍZ: objetos con origen, oficio visible y una segunda vida pensada para habitarse.</p>
+      <p class="capsula-bajada reveal">Tomamos lo que quedó disperso y lo ensamblamos en piezas nuevas, sin réplicas, sin dos iguales. Edición limitada, porque un fragmento no se puede repetir.</p>
     </div>
 
     <div class="capsula-carousel reveal" aria-label="Historias de transformación de muebles">
@@ -413,7 +389,7 @@
 
       <div class="footer-marca">
         <video class="footer-marca-video" autoplay muted playsinline preload="metadata" aria-label="Animación RAÍZ">
-          <source src="assets/videos/video-silla1.mp4" type="video/mp4">
+          <source src="assets/videos/video-silla2.mp4" type="video/mp4">
         </video>
         <div class="footer-redes">
           <!-- [MODIFICAR] Reemplazar href="#" con URLs reales de redes sociales -->
@@ -472,7 +448,7 @@
 
     <!-- Logo grande RAÍZ + botón volver arriba -->
     <div class="footer-logo-fila">
-  <img src="assets/logo-raiz.png" alt="RAÍZ" class="footer-logo-img">
+  <span class="footer-logo-mark">RAÍZ</span>
 
   <button class="circulo-nav" id="footerArriba" aria-label="Volver arriba">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
@@ -491,6 +467,18 @@
 <button class="volver-arriba" id="volverArriba" aria-label="Volver arriba">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
+
+<div class="site-menu-overlay" data-menu-close hidden></div>
+<aside class="site-menu" id="siteMenu" aria-hidden="true" aria-label="Menú principal">
+  <button class="site-menu__close" type="button" data-menu-close aria-label="Cerrar menú">×</button>
+  <nav class="site-menu__nav">
+    <a href="index.html#hero" class="site-menu__link">Inicio</a>
+    <a href="index.html#oficios" class="site-menu__link">Cursos</a>
+    <a href="muebles-capsula.html" class="site-menu__link">Muebles Cápsula</a>
+    <a href="index.html#manifiesto" class="site-menu__link">Nosotros</a>
+    <a href="index.html#contacto" class="site-menu__link">Contacto</a>
+  </nav>
+</aside>
 
 <script src="script.js"></script>
 </body>

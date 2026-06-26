@@ -1,6 +1,6 @@
 ﻿/* ============================================================
    RAÍZ — script.js
-   Menú hamburguesa, scroll suave, header oculto/visible,
+   Menú off-canvas, scroll suave, header oculto/visible,
    reveal on scroll, botón volver arriba, carrusel de oficios
    en mobile, microinteracción del formulario de contacto.
    ============================================================ */
@@ -58,27 +58,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
   runHeroAnimation();
 
-  /* ---------- 1. MENÚ HAMBURGUESA ---------- */
-  const hamburguesa = document.getElementById('hamburguesa');
-  const menuMovil = document.getElementById('menuMovil');
+  /* ---------- 1. MENÚ OFF-CANVAS ---------- */
+  const menuToggle = document.querySelector('.menu-toggle');
+  const siteMenu = document.getElementById('siteMenu');
+  const menuOverlay = document.querySelector('.site-menu-overlay');
+  const menuCloseTriggers = document.querySelectorAll('[data-menu-close]');
+  let focoAntesDelMenu = null;
 
-  if (hamburguesa && menuMovil) {
-    hamburguesa.addEventListener('click', () => {
-      const abierto = menuMovil.classList.toggle('activo');
-      hamburguesa.classList.toggle('activo');
-      hamburguesa.setAttribute('aria-expanded', abierto ? 'true' : 'false');
-      hamburguesa.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
-      document.body.style.overflow = abierto ? 'hidden' : '';
+  function abrirMenu() {
+    if (!menuToggle || !siteMenu || !menuOverlay) return;
+    focoAntesDelMenu = document.activeElement;
+    menuToggle.setAttribute('aria-expanded', 'true');
+    siteMenu.setAttribute('aria-hidden', 'false');
+    menuOverlay.hidden = false;
+    requestAnimationFrame(() => {
+      siteMenu.classList.add('is-active');
+      menuOverlay.classList.add('is-active');
+      document.body.classList.add('menu-abierto');
+      const primerFoco = siteMenu.querySelector('button, a');
+      if (primerFoco) primerFoco.focus();
     });
+  }
 
-    // Cerrar el menú al elegir un link
-    menuMovil.querySelectorAll('a').forEach((enlace) => {
-      enlace.addEventListener('click', () => {
-        menuMovil.classList.remove('activo');
-        hamburguesa.classList.remove('activo');
-        hamburguesa.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+  function cerrarMenu() {
+    if (!menuToggle || !siteMenu || !menuOverlay) return;
+    menuToggle.setAttribute('aria-expanded', 'false');
+    siteMenu.setAttribute('aria-hidden', 'true');
+    siteMenu.classList.remove('is-active');
+    menuOverlay.classList.remove('is-active');
+    document.body.classList.remove('menu-abierto');
+    window.setTimeout(() => {
+      if (!siteMenu.classList.contains('is-active')) menuOverlay.hidden = true;
+    }, 580);
+    if (focoAntesDelMenu && typeof focoAntesDelMenu.focus === 'function') focoAntesDelMenu.focus();
+  }
+
+  if (menuToggle && siteMenu && menuOverlay) {
+    menuToggle.addEventListener('click', abrirMenu);
+    menuCloseTriggers.forEach((trigger) => trigger.addEventListener('click', cerrarMenu));
+    siteMenu.querySelectorAll('a').forEach((enlace) => {
+      enlace.addEventListener('click', cerrarMenu);
+    });
+    document.addEventListener('keydown', (evento) => {
+      if (evento.key === 'Escape' && siteMenu.classList.contains('is-active')) cerrarMenu();
+      if (evento.key !== 'Tab' || !siteMenu.classList.contains('is-active')) return;
+
+      const focuseables = Array.from(siteMenu.querySelectorAll('a, button')).filter((el) => !el.disabled);
+      if (!focuseables.length) return;
+      const primero = focuseables[0];
+      const ultimo = focuseables[focuseables.length - 1];
+
+      if (evento.shiftKey && document.activeElement === primero) {
+        evento.preventDefault();
+        ultimo.focus();
+      } else if (!evento.shiftKey && document.activeElement === ultimo) {
+        evento.preventDefault();
+        primero.focus();
+      }
     });
   }
 
@@ -98,21 +134,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- 3. HEADER: SE OCULTA AL BAJAR, APARECE AL SUBIR ---------- */
+  /* ---------- 3. HEADER FIJO ---------- */
   const header = document.getElementById('header');
-  let ultimoScroll = window.scrollY;
 
   window.addEventListener('scroll', () => {
     const scrollActual = window.scrollY;
 
-    if (header) {
-      if (scrollActual > ultimoScroll && scrollActual > 140) {
-        header.classList.add('header--oculto');
-      } else {
-        header.classList.remove('header--oculto');
-      }
-    }
-    ultimoScroll = scrollActual;
+    if (header) header.classList.remove('header--oculto');
 
     actualizarBotonVolverArriba(scrollActual);
   }, { passive: true });

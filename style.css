@@ -4,27 +4,29 @@
    ============================================================ */
 
 /* ---------- 1. TIPOGRAFÍA EXTERNA ---------- */
-/* Inter Tight se carga desde el <head> de cada HTML via Google Fonts */
+/* Hanken Grotesk, Inter y Manrope se cargan desde el <head>. */
 
 /* ---------- 2. TOKENS DE MARCA ---------- */
 :root{
   /* Paleta — extraída del moodboard, jerarquía intencional */
   --crema:        #F3EDE3;   /* fondo cálido principal */
-  --crema-alta:   #FAF7F0;   /* fondo claro elevado (cards) */
-  --negro:        #111111;   /* texto / fondos oscuros */
-  --negro-suave:  #2A2A2A;
-  --oliva:        #3F4A2F;   /* verde oliva oscuro — secciones contraste */
-  --oliva-alto:   #516040;
+  --crema-alta:   #FFCFED;   /* fondo claro elevado (cards) */
+  --negro:        #C03441;   /* texto / fondos oscuros */
+  --negro-suave:  #F3EDE3;
+  --oliva:        #59152C;   /* verde oliva oscuro — secciones contraste */
+  --oliva-alto:   #59152C;
   --salvia:       #8A9272;   /* verde salvia — soporte */
-  --salvia-baja:  #C7D0B4;
-  --naranja:      #E85A24;   /* acento — usar con moderación */
+  --salvia-baja:  #31131B;
+  --naranja:      #D74B29;   /* acento — usar con moderación */
   --naranja-alta: #F06B36;
   --lila:         #C7B7EA;   /* acento secundario */
   --lila-baja:    #E3DCF7;
 
   /* Tipografía */
   --f-display: "Hanken Grotesk", sans-serif;
-  --f-body:    "Inter Tight", sans-serif;
+  --f-ui:      "Inter", sans-serif;
+  --f-body:    "Manrope", sans-serif;
+  --f-bajada:  "Manrope", sans-serif;
 
   /* Espaciado */
   --espacio-xs: .5rem;
@@ -58,7 +60,7 @@ body{
   background: var(--crema);
   color: var(--negro);
   font-family: var(--f-body);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -96,16 +98,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .titulo-editorial{
   font-family: var(--f-body);
-  font-weight: 500;
-  font-style: italic;
+  font-weight: 300;
+  font-style: normal;
   letter-spacing: -.01em;
 }
 .ojo{
-  font-family: var(--f-body);
+  font-family: var(--f-ui);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .14em;
   font-size: .78rem;
+  color: var(--naranja);
 }
 
 /* Logo con tratamiento orgánico — la R volteada, trazo manuscrito-estructural */
@@ -127,7 +130,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   letter-spacing: -.01em;
 }
 .logo-header{
-  line-height: 0;
+  font-family: "aquavit", var(--f-display);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 3.2vw, 3.2rem);
+  line-height: .85;
+  letter-spacing: .01em;
+  color: var(--tinta, #1A1A1A);
+  text-transform: uppercase;
 }
 .logo-header-img{
   display: block;
@@ -147,7 +156,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   align-items: center;
   justify-content: center;
   gap: .65em;
-  font-family: var(--f-body);
+  font-family: var(--f-ui);
   font-weight: 700;
   font-size: .82rem;
   text-transform: uppercase;
@@ -251,14 +260,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  border: 1.5px solid currentColor;
+  border: 1.5px solid var(--negro);
+  background: var(--negro);
+  color: var(--crema);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-radius var(--t-media), background var(--t-rapida), transform var(--t-rapida);
+  transition: background var(--t-rapida), transform var(--t-rapida), border-color var(--t-rapida), color var(--t-rapida);
 }
 .circulo-nav:hover{
-  border-radius: var(--radio-organico);
+  border-radius: 50%;
   background: var(--naranja);
   border-color: var(--naranja);
   color: var(--crema-alta);
@@ -266,12 +277,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .circulo-nav:active,
 .circulo-nav:focus-visible{
-  border-radius: var(--radio-organico);
+  border-radius: 50%;
   background: var(--naranja);
   border-color: var(--naranja);
   color: var(--crema-alta);
 }
-.circulo-nav svg{ width: 1.1rem; height: 1.1rem; }
+.circulo-nav svg{
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.circulo-nav svg *{
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* ---------- 6. HEADER ---------- */
 .header{
@@ -290,52 +309,141 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   align-items: center;
   justify-content: space-between;
 }
-.nav-principal{
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.nav-links{
-  display: flex;
-  gap: var(--espacio-m);
-  font-family: var(--f-body);
-  font-size: .9rem;
-  font-weight: 500;
-}
-.nav-links a{
+.menu-toggle{
   position: relative;
-  padding-bottom: .3em;
-}
-.nav-links a::after{
-  content: '';
-  position: absolute;
-  left: 0; bottom: 0;
-  height: 2px;
-  width: 0;
-  background: var(--naranja);
-  transition: width var(--t-rapida);
-}
-.nav-links a:hover::after{ width: 100%; }
-.hamburguesa{
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  width: 2.2rem;
-  height: 2.2rem;
+  z-index: 110;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  z-index: 110;
-}
-.hamburguesa span{
-  display: block;
-  width: 1.6rem;
-  height: 2px;
+  min-width: 5.4rem;
+  min-height: 2.6rem;
+  padding: .72rem 1.25rem;
+  border: 1.5px solid var(--negro);
+  border-radius: 999px;
   background: var(--negro);
-  transition: transform var(--t-rapida), opacity var(--t-rapida);
+  color: var(--crema);
+  font-family: var(--f-ui);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition: background var(--t-rapida), color var(--t-rapida), border-color var(--t-rapida), transform var(--t-rapida);
 }
-.hamburguesa.activo span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
-.hamburguesa.activo span:nth-child(2){ opacity: 0; }
-.hamburguesa.activo span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+.menu-toggle:hover,
+.menu-toggle:focus-visible{
+  background: var(--naranja);
+  border-color: var(--naranja);
+  color: var(--crema-alta);
+  transform: translateY(-2px);
+}
+
+body.menu-abierto{
+  overflow: hidden;
+}
+.site-menu-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 190;
+  background: rgba(17,17,17,.58);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .55s cubic-bezier(.22,.68,.32,1);
+}
+.site-menu-overlay.is-active{
+  opacity: 1;
+  pointer-events: auto;
+}
+.site-menu{
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 200;
+  width: min(52vw, 560px);
+  min-width: 400px;
+  height: 100svh;
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  background: var(--lila);
+  color: var(--negro);
+  border-left: 1px solid rgba(17,17,17,.14);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform .58s cubic-bezier(.22,.68,.22,1), visibility 0s linear .58s;
+}
+.site-menu.is-active{
+  transform: translateX(0);
+  visibility: visible;
+  transition: transform .58s cubic-bezier(.22,.68,.22,1), visibility 0s;
+}
+.site-menu__close{
+  align-self: flex-end;
+  width: 3.25rem;
+  height: 3.25rem;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font-family: var(--f-ui);
+  font-size: 2rem;
+  line-height: 1;
+  transition: background var(--t-rapida), color var(--t-rapida), border-radius var(--t-media), transform var(--t-rapida);
+}
+.site-menu__close:hover,
+.site-menu__close:focus-visible{
+  background: var(--naranja);
+  color: var(--crema-alta);
+  border-radius: 50%;
+  transform: rotate(8deg);
+}
+.site-menu__nav{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1rem, 2.2vw, 1.35rem);
+}
+.site-menu__link{
+  position: relative;
+  display: inline-block;
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.site-menu__link::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: .02em;
+  width: 100%;
+  height: .09em;
+  background: var(--naranja);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .45s cubic-bezier(.22,.68,.32,1);
+}
+.site-menu__link:hover::after,
+.site-menu__link:focus-visible::after{
+  transform: scaleX(1);
+}
+@media (max-width: 720px){
+  .site-menu{
+    width: 100%;
+    min-width: 0;
+    padding: 1.25rem;
+  }
+  .site-menu__link{
+    font-size: clamp(1.8rem, 10vw, 3rem);
+  }
+  .site-menu__nav{
+    gap: 1rem;
+  }
+}
 
 /* ---------- 7. HERO ---------- */
 
@@ -361,7 +469,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .word-slide.out{opacity:0;transform:translateY(-40px);transition:opacity 0.45s ease, transform 0.45s ease;}
 .word-text{
   position:relative;
-  font-family:'Archivo Expanded',sans-serif;
+  font-family:var(--f-display);
   font-weight:900;
   font-size:clamp(64px,11vw,150px);
   line-height:0.9;
@@ -422,16 +530,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .finale.in{opacity:1;pointer-events:auto;}
 .finale-logo{
-  font-family:'Archivo Expanded',sans-serif;
-  font-weight:900;
+  font-family:"aquavit", var(--f-display);
+  font-weight:600;
   font-size:clamp(80px,15vw,200px);
   color:var(--tinta, #1A1A1A);
   letter-spacing:0.01em;
   line-height:1;
 }
+.finale-kicker{
+  font-family: var(--f-body);
+  font-size: 15px;
+  color: var(--tinta, #1A1A1A);
+  margin-top: 18px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
 .finale-sub{
-  font-size:15px;color:var(--tinta-60, rgba(26,26,26,0.6));
-  margin-top:18px;letter-spacing:0.04em;
+  font-family: var(--f-body);
+  font-size: 15px;
+  color:var(--tinta-60, rgba(26,26,26,0.6));
+  margin-top:10px;letter-spacing:0.04em;
   text-transform:uppercase;
   font-weight:600;
 }
@@ -538,8 +657,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .historia-eyebrow{ color: var(--naranja); }
 .historia-slide .seccion-titulo{ margin-top: var(--espacio-xs); }
 .historia-slide p{
+  font-family: var(--f-bajada);
   font-size: clamp(1.05rem, 1.55vw, 1.35rem);
-  color: var(--negro-suave);
+  color: #F3EDE3;
   max-width: 40ch;
   line-height: 1.52;
 }
@@ -611,12 +731,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ---------- 11. LABORATORIO DE OFICIOS ---------- */
 .oficios{
-  background: #C7B7EA;
+  background: #F3EDE3;
   color: var(--negro);
 }
 .oficios .seccion-eyebrow{
   display: inline-block;
-  color: var(--lila);
   margin-bottom: var(--espacio-xs);
 }
 .oficios-cabecera{
@@ -627,8 +746,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   margin-bottom: var(--espacio-l);
 }
 .oficios-cabecera p{
-  font-family: var(--f-body);
-  font-style: italic;
+  font-family: var(--f-bajada);
+  font-style: normal;
   font-size: 1.05rem;
   max-width: 52ch;
   color: var(--negro);
@@ -666,7 +785,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   flex: 1;
 }
 .card-oficio-numero{
-  font-family: var(--f-body);
+  font-family: var(--f-ui);
   font-size: .75rem;
   letter-spacing: .1em;
   color: var(--negro);
@@ -676,6 +795,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size: 1.15rem;
   text-transform: uppercase;
   line-height: 1.12;
+  color: #111111;
 }
 .card-oficio-enlace{
   margin-top: auto;
@@ -716,19 +836,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   max-width: 17ch;
   text-align: left;
 }
+.manifiesto-eyebrow{
+  color: var(--naranja);
+}
 .manifiesto-titulo em{
   font-style: normal;
   color: var(--naranja);
-  font-family: var(--f-body);
+  font-family: var(--f-display);
   text-transform: none;
   font-weight: 500;
 }
 .manifiesto-secundario{
-  font-family: var(--f-body);
-  font-style: italic;
+  font-family: var(--f-bajada);
+  font-style: normal;
   font-size: 1.2rem;
   max-width: 38ch;
-  color: var(--negro-suave);
+  color: #111111;
   text-align: left;
 }
 .manifiesto-card{
@@ -796,7 +919,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .card-pieza-desc{
   font-family: var(--f-body);
-  font-style: italic;
+  font-style: normal;
   font-size: .92rem;
   color: var(--negro-suave);
   margin-top: .3rem;
@@ -822,8 +945,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   margin-top: var(--espacio-s);
 }
 .capsula-bajada{
-  font-family: var(--f-body);
-  font-style: italic;
+  font-family: var(--f-bajada);
+  font-style: normal;
   font-size: 1.08rem;
   color: rgba(243,237,227,.74);
   max-width: 36ch;
@@ -959,7 +1082,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .capsula-card__datos span{
   display: block;
   margin-bottom: .35rem;
-  font-family: var(--f-body);
+  font-family: var(--f-ui);
   font-weight: 700;
   font-size: .7rem;
   text-transform: uppercase;
@@ -1004,7 +1127,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .capsula-flecha{
   z-index: 5;
-  background: var(--crema);
 }
 .capsula-dots{
   display: flex;
@@ -1049,7 +1171,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .cta-final-texto{
   font-family: var(--f-body);
-  font-style: italic;
+  font-style: normal;
   font-size: 1.15rem;
   max-width: 34ch;
   color: var(--salvia-baja);
@@ -1083,7 +1205,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .footer-marca p{
   font-family: var(--f-body);
-  font-style: italic;
+  font-style: normal;
   margin-top: var(--espacio-s);
   max-width: 26ch;
   color: var(--negro-suave);
@@ -1095,10 +1217,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   margin-top: -2.5rem;
   border-radius: 18px;
   object-fit: cover;
-  background: var(--crema);
+  background: transparent;
 }
 .footer-columna h4{
-  font-family: var(--f-body);
+  font-family: var(--f-ui);
   font-size: .8rem;
   text-transform: uppercase;
   letter-spacing: .1em;
@@ -1146,7 +1268,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .footer-form label{
   display: block;
-  font-family: var(--f-body);
+  font-family: var(--f-ui);
   font-size: .8rem;
   text-transform: uppercase;
   letter-spacing: .1em;
@@ -1165,7 +1287,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   background: none;
   border: none;
   font-family: var(--f-body);
-  font-style: italic;
+  font-style: normal;
   font-size: 1.05rem;
   color: var(--negro);
 }
@@ -1201,10 +1323,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding-bottom: 5rem;
 }
 
-.footer-logo-img{
+.footer-logo-mark{
   display: block;
-  width: min(100%, 56rem);
-  height: auto;
+  font-family: "aquavit", var(--f-display);
+  font-weight: 600;
+  font-size: clamp(6rem, 20vw, 18rem);
+  line-height: .78;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: var(--crema);
 }
 
 .footer-logo-fila .circulo-nav{
@@ -1250,43 +1377,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .volver-arriba:hover,
 .volver-arriba:active,
-.volver-arriba:focus-visible{ border-radius: var(--radio-organico); background: var(--naranja); }
-.volver-arriba svg{ width: 1.2rem; height: 1.2rem; }
+.volver-arriba:focus-visible{
+  border-radius: 50%;
+  background: var(--naranja);
+}
+.volver-arriba svg{
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.volver-arriba svg *{
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* ---------- 17. MENÚ MÓVIL ---------- */
-.menu-movil{
-  position: fixed;
-  inset: 0;
-  background: var(--negro);
-  color: var(--crema);
-  z-index: 105;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: var(--espacio-l) var(--espacio-m);
-  transform: translateY(-100%);
-  transition: transform var(--t-media);
-}
-.menu-movil.activo{ transform: translateY(0); }
-.menu-movil-links{
-  display: flex;
-  flex-direction: column;
-  gap: var(--espacio-s);
-  font-family: var(--f-display);
-  font-size: clamp(1.8rem, 8vw, 2.8rem);
-  text-transform: uppercase;
-}
-.menu-movil-links a{
-  display: inline-block;
-  transition: color var(--t-rapida), transform var(--t-rapida);
-}
-.menu-movil-links a:hover{ color: var(--naranja); transform: translateX(.3em); }
-.menu-movil-links a:active,
-.menu-movil-links a:focus-visible{ color: var(--naranja); transform: translateX(.3em); }
-.menu-movil-cta{
-  margin-top: var(--espacio-l);
-}
-
 /* ---------- 18. RESPONSIVE: TABLET ---------- */
 @media (max-width: 1024px){
   :root{ --espacio-xl: 5rem; }
@@ -1326,8 +1431,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     max-width: 100%;
     padding-inline: 1rem;
   }
-  .nav-links, .nav-cta{ display: none; }
-  .hamburguesa{ display: flex; }
+  .menu-toggle{ min-width: 4.8rem; }
   .historia .envoltura{
     max-width: calc(100% - 2rem);
     padding: 1rem;
@@ -1386,7 +1490,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     width: min(100%, 12rem);
   }
   .footer-logo-fila{ flex-direction: column; gap: var(--espacio-m); align-items: flex-start; }
-  .footer-logo-img{ width: 100%; }
+  .footer-logo-mark{ font-size: clamp(5rem, 26vw, 8rem); }
   .logo-raiz.logo-grande{ font-size: clamp(3.5rem, 22vw, 6rem); }
   .volver-arriba{ width: 2.7rem; height: 2.7rem; bottom: var(--espacio-s); right: var(--espacio-s); }
 }
@@ -1507,7 +1611,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ---------- 14c. STATEMENT FINAL ---------- */
 .statement{
-  background: var(--negro);
+  background: #111111;
   color: var(--crema);
   padding: 160px 0;
   text-align: center;
@@ -1515,7 +1619,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   position: relative;
 }
 .statement h2{
-  font-family: "Archivo Expanded", sans-serif;
+  font-family: var(--f-display);
   font-weight: 800;
   text-transform: uppercase;
   font-size: clamp(42px, 8.5vw, 124px);
@@ -1524,6 +1628,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .statement h2 .sep{ color: var(--naranja); }
 .statement p{
+  font-family: var(--f-bajada);
   font-size: 15px;
   color: rgba(243,237,227,.55);
   margin-top: 32px;
