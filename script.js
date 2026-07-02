@@ -419,6 +419,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- 10c. TESTIMONIOS ALUMNOS: modal del marquee ---------- */
+  const alumnosSection = document.querySelector('.alumnos');
+  const alumnoModal = document.getElementById('alumnoModal');
+
+  if (alumnosSection && alumnoModal) {
+    const alumnoModalTexto = document.getElementById('alumnoModalTexto');
+    const alumnoModalNombre = document.getElementById('alumnoModalNombre');
+    const alumnoModalRol = document.getElementById('alumnoModalRol');
+    const alumnoModalCerrar = alumnoModal.querySelector('.alumno-modal__cerrar');
+    let alumnoCardActiva = null;
+
+    function abrirAlumnoModal(card) {
+      alumnoCardActiva = card;
+      if (alumnoModalTexto) alumnoModalTexto.textContent = card.dataset.texto || '';
+      if (alumnoModalNombre) alumnoModalNombre.textContent = card.dataset.nombre || '';
+      if (alumnoModalRol) alumnoModalRol.textContent = card.dataset.rol || '';
+      alumnosSection.classList.add('alumnos--modal-abierto');
+      alumnoModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (alumnoModalCerrar) alumnoModalCerrar.focus();
+    }
+
+    function cerrarAlumnoModal() {
+      if (alumnoModal.getAttribute('aria-hidden') === 'true') return;
+      alumnoModal.setAttribute('aria-hidden', 'true');
+      alumnosSection.classList.remove('alumnos--modal-abierto');
+      document.body.style.overflow = '';
+      if (alumnoCardActiva) alumnoCardActiva.focus();
+      alumnoCardActiva = null;
+    }
+
+    alumnosSection.addEventListener('click', (evento) => {
+      const card = evento.target.closest('.alumno-card');
+      if (!card || !alumnosSection.contains(card)) return;
+      abrirAlumnoModal(card);
+    });
+
+    alumnoModal.addEventListener('click', (evento) => {
+      if (evento.target === alumnoModal || evento.target.closest('.alumno-modal__cerrar')) {
+        cerrarAlumnoModal();
+      }
+    });
+
+    document.addEventListener('keydown', (evento) => {
+      if (evento.key === 'Escape') cerrarAlumnoModal();
+    });
+  }
+
   /* ---------- 11. FORMULARIO DE CONTACTO (footer) ---------- */
   const formularioProyecto = document.getElementById('formularioProyecto');
   const footerMsg = document.getElementById('footerMsg');
@@ -443,5 +491,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-
 
