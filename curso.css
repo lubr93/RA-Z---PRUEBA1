@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    RAÍZ — curso.css
    Estilos específicos de curso-restauracion.html.
    Usa los mismos tokens definidos en style.css.
@@ -21,13 +21,13 @@
   padding-right: clamp(2rem, 5vw, 4.5rem);
 }
 .curso-eyebrow{
-  font-family: var(--f-ui);
+  font-family: var(--font-label);
   color: var(--naranja);
   display: block;
   margin-bottom: var(--espacio-s);
 }
 .curso-hero-titulo{
-  font-family: var(--f-titulo);
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(1.9rem, 4vw, 3.2rem);
   line-height: 1;
@@ -36,7 +36,7 @@
   margin-bottom: var(--espacio-m);
 }
 .curso-hero-bajada{
-  font-family: var(--f-cuerpo);
+  font-family: var(--font-body);
   font-style: normal;
   font-weight: 300;
   font-size: 1.1rem;
@@ -64,7 +64,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--espacio-s);
-  border-top: 1px solid rgba(0,0,0,.15);
+  border-top: 1px solid color-mix(in srgb, var(--color-nogal) 15%, transparent);
   padding-top: var(--espacio-m);
 }
 .dato-rapido{
@@ -73,12 +73,12 @@
   gap: .3rem;
 }
 .dato-numero{
-  font-family: var(--f-titulo);
+  font-family: var(--font-accent);
   font-size: 2.2rem;
   color: var(--naranja);
 }
 .dato-label{
-  font-family: var(--f-cuerpo);
+  font-family: var(--font-label);
   font-size: .8rem;
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -93,7 +93,7 @@
   align-items: start;
 }
 .curso-presentacion-grid p{
-  font-family: var(--f-cuerpo);
+  font-family: var(--font-body);
   font-size: 1.1rem;
   color: var(--negro-suave);
 }
@@ -126,7 +126,7 @@
 }
 .incluye-icono svg{ width: 1.4rem; height: 1.4rem; }
 .incluye-item h3{
-  font-family: var(--f-titulo);
+  font-family: var(--font-display);
   font-size: 1.05rem;
   text-transform: uppercase;
 }
@@ -142,10 +142,10 @@
 .modulos-lista{
   display: flex;
   flex-direction: column;
-  border-top: 1px solid rgba(241,237,228,.2);
+  border-top: 1px solid color-mix(in srgb, var(--color-hueso) 20%, transparent);
 }
 .modulo-item{
-  border-bottom: 1px solid rgba(241,237,228,.2);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-hueso) 20%, transparent);
 }
 .modulo-item summary{
   list-style: none;
@@ -154,7 +154,7 @@
   gap: var(--espacio-m);
   padding: var(--espacio-m) 0;
   cursor: pointer;
-  font-family: var(--f-titulo);
+  font-family: var(--font-display);
 }
 .modulo-item summary::-webkit-details-marker{ display: none; }
 .modulo-numero{
@@ -181,7 +181,7 @@
 .modulo-item[open] .modulo-flecha{ transform: rotate(180deg); background: var(--naranja); border-color: var(--naranja); }
 .modulo-flecha svg{ width: 1rem; height: 1rem; }
 .modulo-item p{
-  font-family: var(--f-cuerpo);
+  font-family: var(--font-body);
   font-style: italic;
   font-size: 1.02rem;
   color: var(--salvia-baja);
@@ -198,12 +198,12 @@
 }
 .detalle-card{
   padding: var(--espacio-m);
-  border: 1.5px solid rgba(0,0,0,.15);
+  border: 1.5px solid color-mix(in srgb, var(--color-nogal) 15%, transparent);
   border-radius: var(--radio-organico);
 }
 .detalle-card .ojo{ color: var(--naranja); }
 .detalle-valor{
-  font-family: var(--f-titulo);
+  font-family: var(--font-display);
   font-size: 1.8rem;
   margin: .5rem 0;
   text-transform: uppercase;
@@ -257,7 +257,7 @@
 
 /* ---------- TÍTULO COMPARTIDO — nuevas secciones ---------- */
 .seccion-titulo-f{
-  font-family: var(--f-titulo);
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(2rem, 4.2vw, 3.4rem);
   line-height: 1;
@@ -273,7 +273,7 @@
 .proceso-lista{
   list-style: none;
   padding: 0; margin: 0;
-  border-top: 1px solid rgba(241,237,228,.12);
+  border-top: 1px solid color-mix(in srgb, var(--color-hueso) 12%, transparent);
 }
 .proceso-etapa{
   display: grid;
@@ -281,11 +281,11 @@
   gap: 0 var(--espacio-m);
   align-items: baseline;
   padding: 1.5rem 0;
-  border-bottom: 1px solid rgba(241,237,228,.12);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-hueso) 12%, transparent);
   transition-delay: calc(var(--i, 0) * 90ms);
 }
 .proceso-num{
-  font-family: var(--f-ui);
+  font-family: var(--font-label);
   font-weight: 700;
   font-size: .75rem;
   color: var(--naranja);
@@ -294,7 +294,7 @@
   padding-top: .2em;
 }
 .proceso-etapa-titulo{
-  font-family: var(--f-titulo);
+  font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(1.05rem, 1.8vw, 1.3rem);
   text-transform: uppercase;
@@ -302,10 +302,10 @@
   color: var(--crema);
 }
 .proceso-etapa-desc{
-  font-family: var(--f-cuerpo);
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: .92rem;
-  color: rgba(241,237,228,.6);
+  color: color-mix(in srgb, var(--color-hueso) 60%, transparent);
   line-height: 1.55;
   text-align: right;
 }
@@ -344,28 +344,28 @@
   pointer-events: none;
 }
 .caso-ph-label{
-  font-family: var(--f-ui);
+  font-family: var(--font-label);
   font-weight: 700;
   font-size: .9rem;
   letter-spacing: .1em;
-  color: rgba(241,237,228,.55);
+  color: color-mix(in srgb, var(--color-hueso) 55%, transparent);
   text-transform: uppercase;
 }
 .caso-ph-sub{
-  font-family: var(--f-cuerpo);
+  font-family: var(--font-body);
   font-size: .75rem;
-  color: rgba(241,237,228,.38);
+  color: color-mix(in srgb, var(--color-hueso) 38%, transparent);
 }
 .caso-tag{
   position: absolute;
   bottom: 1rem;
-  font-family: var(--f-ui);
+  font-family: var(--font-label);
   font-weight: 700;
   font-size: .68rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--crema);
-  background: rgba(0,0,0,.4);
+  color: var(--color-hueso);
+  background: var(--color-oliva);
   padding: .28em .7em;
   border-radius: 100px;
   backdrop-filter: blur(4px);
@@ -373,7 +373,7 @@
 .caso-tag--antes{ left: 1rem; }
 .caso-tag--despues{ right: 1rem; }
 .caso-caption{
-  font-family: var(--f-cuerpo);
+  font-family: var(--font-body);
   font-size: .85rem;
   color: var(--negro-suave);
   margin-top: var(--espacio-s);
@@ -395,7 +395,7 @@
   align-items: center;
   gap: 0;
   padding: var(--espacio-m);
-  border: 1.5px solid rgba(0,0,0,.1);
+  border: 1.5px solid color-mix(in srgb, var(--color-nogal) 10%, transparent);
   border-radius: 3px;
   text-align: center;
   transition-delay: calc(var(--i, 0) * 80ms);
@@ -415,7 +415,7 @@
   flex-shrink: 0;
 }
 .capacidad-titulo{
-  font-family: var(--f-titulo);
+  font-family: var(--font-display);
   font-weight: 800;
   font-size: 1rem;
   letter-spacing: 0;
@@ -423,7 +423,7 @@
   max-width: 18ch;
 }
 .capacidad-desc{
-  font-family: var(--f-cuerpo);
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: .88rem;
   color: var(--negro-suave);
@@ -436,7 +436,7 @@
 /* ---------- NUEVA ESTRUCTURA DEL CURSO ---------- */
 .casos-bajada,
 .curso-metodo-bajada{
-  font-family: var(--f-cuerpo);
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.6;
@@ -457,7 +457,7 @@
   aspect-ratio: 4/5;
   overflow: hidden;
   border-radius: 3px;
-  background: linear-gradient(135deg, rgba(71,75,53,.92), rgba(97,44,45,.88)), var(--oliva);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--color-oliva) 92%, transparent), color-mix(in srgb, var(--color-nogal) 88%, transparent)), var(--oliva);
   cursor: ew-resize;
   touch-action: none;
 }
@@ -468,12 +468,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--f-ui);
+  font-family: var(--font-label);
   font-weight: 700;
   font-size: .72rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: rgba(241,237,228,.46);
+  color: color-mix(in srgb, var(--color-hueso) 46%, transparent);
   pointer-events: none;
 }
 .caso-slider-img{
@@ -514,7 +514,7 @@
   bottom: 0;
   left: 50%;
   width: 2px;
-  background: rgba(241,237,228,.92);
+  background: color-mix(in srgb, var(--color-hueso) 92%, transparent);
   transform: translateX(-50%);
 }
 .caso-slider-handle span{
@@ -526,12 +526,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--f-ui);
+  font-family: var(--font-label);
   font-size: .72rem;
   font-weight: 800;
   position: relative;
   z-index: 1;
-  box-shadow: 0 .35rem 1.2rem rgba(0,0,0,.22);
+  box-shadow: 0 .35rem 1.2rem color-mix(in srgb, var(--color-nogal) 22%, transparent);
 }
 .caso-tag{ top: 1rem; bottom: auto; }
 .capacidades-grid{ grid-template-columns: repeat(4, 1fr); }
@@ -546,7 +546,7 @@
   align-items: center;
 }
 .proyecto-final-grid p{
-  font-family: var(--f-cuerpo);
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: 1.08rem;
   line-height: 1.65;
@@ -563,13 +563,31 @@
   background: var(--crema-alta);
   overflow: hidden;
 }
-.alumnos .seccion-titulo-f{ max-width: 19ch; }
+.alumnos .envoltura{
+  text-align: center;
+}
+.alumnos .seccion-eyebrow{
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+}
+.alumnos .seccion-titulo-f{
+  max-width: none;
+  margin-inline: auto;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.08;
+  text-align: center;
+}
+.alumnos .seccion-titulo-f span{
+  display: block;
+  white-space: nowrap;
+}
 .alumnos-marquee{
   width: 100%;
   margin-top: var(--espacio-l);
   overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, var(--color-nogal) 8%, var(--color-nogal) 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, var(--color-nogal) 8%, var(--color-nogal) 92%, transparent);
 }
 .alumnos-track{
   display: flex;
@@ -593,31 +611,31 @@
   justify-content: space-between;
   gap: 1.5rem;
   padding: clamp(1.35rem, 2vw, 2rem);
-  border: 1px solid rgba(70,21,20,.08);
+  border: 1px solid color-mix(in srgb, var(--color-hueso) 16%, transparent);
   border-radius: 14px;
-  color: #461514;
+  color: var(--color-hueso);
   text-align: left;
-  box-shadow: 0 18px 42px rgba(70,21,20,.06);
+  box-shadow: 0 18px 42px color-mix(in srgb, var(--color-nogal) 6%, transparent);
   cursor: pointer;
   transition: transform .32s ease, box-shadow .32s ease, border-color .32s ease;
 }
-.alumno-card--claro{ background: #F2EDE1; }
-.alumno-card--crudo{ background: #E8DFC8; }
+.alumno-card--claro{ background: var(--color-oliva); }
+.alumno-card--crudo{ background: var(--color-oliva); }
 .alumno-card:hover,
 .alumno-card:focus-visible{
-  border-color: rgba(194,98,46,.3);
-  box-shadow: 0 22px 54px rgba(70,21,20,.12);
+  border-color: color-mix(in srgb, var(--color-terracota) 30%, transparent);
+  box-shadow: 0 22px 54px color-mix(in srgb, var(--color-nogal) 12%, transparent);
   transform: translateY(-4px);
 }
 .alumno-card:focus-visible{
-  outline: 2px solid #C2622E;
+  outline: 2px solid var(--color-terracota);
   outline-offset: 4px;
 }
 .alumno-estrellas{
   display: inline-flex;
   align-items: center;
   gap: .18rem;
-  color: #C2622E;
+  color: var(--color-terracota);
 }
 .alumno-estrellas svg{
   width: .95rem;
@@ -626,29 +644,36 @@
   fill: currentColor;
 }
 .alumno-card blockquote{
-  font-family: "Fraunces", var(--f-titulo);
+  font-family: var(--font-body);
   font-style: italic;
-  font-weight: 500;
-  font-size: clamp(1.05rem, 1.3vw, 1.28rem);
-  line-height: 1.35;
-  color: #461514;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.15vw, 1.14rem);
+  line-height: 1.55;
+  color: var(--color-hueso);
   margin: 0;
 }
 .alumno-meta{
   display: grid;
-  gap: .22rem;
-  font-family: var(--f-ui);
-  color: #461514;
+  gap: .26rem;
+  font-family: var(--font-label);
+  color: var(--color-hueso);
 }
 .alumno-meta strong{
+  font-family: var(--font-display);
   font-weight: 800;
-  font-size: .86rem;
-  letter-spacing: .04em;
+  font-size: .9rem;
+  line-height: 1.1;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 .alumno-meta span{
-  color: rgba(70,21,20,.58);
-  font-size: .76rem;
+  font-family: var(--font-label);
+  font-weight: 600;
+  color: color-mix(in srgb, var(--color-hueso) 72%, transparent);
+  font-size: .72rem;
+  line-height: 1.2;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 .alumno-modal{
   position: fixed;
@@ -657,7 +682,7 @@
   display: grid;
   place-items: center;
   padding: 1rem;
-  background: rgba(20,14,8,.58);
+  background: color-mix(in srgb, var(--color-nogal) 58%, transparent);
   opacity: 0;
   pointer-events: none;
   transition: opacity .28s ease;
@@ -671,9 +696,9 @@
   width: min(100%, 40rem);
   padding: clamp(1.6rem, 4vw, 3rem);
   border-radius: 18px;
-  background: #F2EDE1;
-  color: #461514;
-  box-shadow: 0 28px 86px rgba(0,0,0,.28);
+  background: var(--color-hueso);
+  color: var(--color-nogal);
+  box-shadow: 0 28px 86px color-mix(in srgb, var(--color-nogal) 28%, transparent);
   transform: scale(.86);
   transition: transform .32s ease;
 }
@@ -682,11 +707,11 @@
 }
 .alumno-modal__panel blockquote{
   margin: 1.2rem 0 1.6rem;
-  font-family: "Fraunces", var(--f-titulo);
+  font-family: var(--font-body);
   font-style: italic;
-  font-weight: 500;
-  font-size: clamp(1.35rem, 3vw, 2.2rem);
-  line-height: 1.18;
+  font-weight: 400;
+  font-size: clamp(1.18rem, 2.2vw, 1.65rem);
+  line-height: 1.45;
 }
 .alumno-modal__cerrar{
   position: absolute;
@@ -697,8 +722,8 @@
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 50%;
-  background: #C2622E;
-  color: #fff;
+  background: var(--color-terracota);
+  color: var(--color-hueso);
   font-size: 1.45rem;
   line-height: 1;
   cursor: pointer;
@@ -714,14 +739,14 @@
   }
 }
 
-.cta-final .ojo{ color: rgba(241,237,228,.5); }
+.cta-final .ojo{ color: color-mix(in srgb, var(--color-hueso) 50%, transparent); }
 .cta-final .envoltura{
   margin: 0 auto;
   max-width: 72rem;
   text-align: center;
 }
 .cta-final .cta-final-titulo{
-  font-family: var(--f-titulo);
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(3rem, 7vw, 5.6rem);
   line-height: 1;
@@ -739,10 +764,10 @@
   text-align: center;
 }
 .cta-final .cta-final-texto{
-  font-family: var(--f-cuerpo);
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: 1.1rem;
-  color: rgba(241,237,228,.55);
+  color: color-mix(in srgb, var(--color-hueso) 55%, transparent);
   max-width: none;
   white-space: nowrap;
 }
@@ -753,9 +778,15 @@
   gap: 1rem;
   margin-top: var(--espacio-m);
 }
+.cta-final .btn-light:hover,
+.cta-final .btn-light:focus-visible{
+  background: var(--color-terracota);
+  color: var(--color-hueso);
+  border-color: var(--color-terracota);
+}
 
 /* ---------- RESPONSIVE TABLET ---------- */
-@media (max-width: 1024px){
+@media (max-width: 1023px){
   .curso-hero-grid{ grid-template-columns: 1fr; }
   /* texto arriba, imagen abajo — sin diagonal en layout apilado */
   .curso-hero-grid > div:first-child{ padding-right: 0; }
@@ -773,13 +804,17 @@
   .proyecto-final-grid{ grid-template-columns: 1fr; }
   .curso-metodo .incluye-grid{ grid-template-columns: repeat(3, 1fr); }
   .caso-slider{ aspect-ratio: 4/3; }
+  .alumnos .seccion-titulo-f{
+    font-size: clamp(1.55rem, 5.6vw, 2.7rem);
+    line-height: 1.08;
+  }
   .alumno-card{
     flex-basis: min(72vw, 22rem);
   }
 }
 
 /* ---------- RESPONSIVE MOBILE ---------- */
-@media (max-width: 720px){
+@media (max-width: 599px){
   .curso-hero{ padding-top: 7.5rem; }
   .curso-hero-titulo{ font-size: clamp(1.8rem, 7vw, 2.6rem); }
   .curso-datos-rapidos{ grid-template-columns: 1fr 1fr; }
@@ -791,10 +826,17 @@
   .capacidades-grid{ grid-template-columns: 1fr; }
   .casos-grid,
   .curso-metodo .incluye-grid{ grid-template-columns: 1fr; }
+  .alumnos .seccion-titulo-f{
+    font-size: clamp(.78rem, 4vw, 1.5rem);
+    line-height: 1.12;
+  }
+  .alumnos .seccion-titulo-f span{
+    white-space: nowrap;
+  }
   .alumnos-marquee{
     margin-top: var(--espacio-m);
-    mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+    mask-image: linear-gradient(90deg, transparent, var(--color-nogal) 4%, var(--color-nogal) 96%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, var(--color-nogal) 4%, var(--color-nogal) 96%, transparent);
   }
   .alumnos-track{
     animation-duration: 60s;
@@ -805,3 +847,6 @@
   }
   .cta-final .cta-final-texto{ white-space: normal; }
 }
+
+
+
