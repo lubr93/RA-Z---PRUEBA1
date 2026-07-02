@@ -6,32 +6,44 @@
 
 /* ---------- HERO DEL CURSO ---------- */
 .curso-hero{
-  padding-top: 9rem;
+  padding-top: 7rem;
   padding-bottom: var(--espacio-l);
   background: var(--crema);
 }
 .curso-hero-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--espacio-l);
+  gap: 0;
   align-items: center;
 }
+/* Respiro en el bloque de texto, compensando el gap cero */
+.curso-hero-grid > div:first-child{
+  padding-right: clamp(2rem, 5vw, 4.5rem);
+}
 .curso-eyebrow{
+  font-family: var(--f-ui);
   color: var(--naranja);
   display: block;
   margin-bottom: var(--espacio-s);
 }
 .curso-hero-titulo{
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  max-width: 16ch;
+  font-family: var(--f-titulo);
+  font-weight: 900;
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  max-width: 22ch;
   margin-bottom: var(--espacio-m);
 }
 .curso-hero-bajada{
-  font-family: var(--f-body);
-  font-style: italic;
-  font-size: 1.15rem;
+  font-family: var(--f-cuerpo);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.1rem;
   color: var(--negro-suave);
-  max-width: 36ch;
+  max-width: 40ch;
+  line-height: 1.6;
 }
 .curso-hero-acciones{
   display: flex;
@@ -40,8 +52,10 @@
   flex-wrap: wrap;
 }
 .curso-hero-imagen{
+  width: 94%;
+  justify-self: end;
   aspect-ratio: 4/5;
-  border-radius: var(--radio-organico);
+  clip-path: polygon(26% 0, 100% 0, 100% 100%, 0 100%);
   overflow: hidden;
 }
 .curso-hero-imagen img{ width: 100%; height: 100%; object-fit: cover; }
@@ -51,7 +65,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--espacio-s);
-  border-top: 1px solid rgba(20,19,15,.15);
+  border-top: 1px solid rgba(0,0,0,.15);
   padding-top: var(--espacio-m);
 }
 .dato-rapido{
@@ -60,12 +74,12 @@
   gap: .3rem;
 }
 .dato-numero{
-  font-family: var(--f-display);
+  font-family: var(--f-titulo);
   font-size: 2.2rem;
   color: var(--naranja);
 }
 .dato-label{
-  font-family: var(--f-body);
+  font-family: var(--f-cuerpo);
   font-size: .8rem;
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -80,6 +94,7 @@
   align-items: start;
 }
 .curso-presentacion-grid p{
+  font-family: var(--f-cuerpo);
   font-size: 1.1rem;
   color: var(--negro-suave);
 }
@@ -112,7 +127,7 @@
 }
 .incluye-icono svg{ width: 1.4rem; height: 1.4rem; }
 .incluye-item h3{
-  font-family: var(--f-display);
+  font-family: var(--f-titulo);
   font-size: 1.05rem;
   text-transform: uppercase;
 }
@@ -123,13 +138,15 @@
 
 /* ---------- MÓDULOS (acordeón) ---------- */
 .curso-modulos{ background: var(--oliva); color: var(--crema); }
+.curso-modulos .ojo{ color: var(--naranja); }
+.curso-modulos .seccion-titulo{ color: var(--crema); }
 .modulos-lista{
   display: flex;
   flex-direction: column;
-  border-top: 1px solid rgba(242,237,227,.2);
+  border-top: 1px solid rgba(241,237,228,.2);
 }
 .modulo-item{
-  border-bottom: 1px solid rgba(242,237,227,.2);
+  border-bottom: 1px solid rgba(241,237,228,.2);
 }
 .modulo-item summary{
   list-style: none;
@@ -138,7 +155,7 @@
   gap: var(--espacio-m);
   padding: var(--espacio-m) 0;
   cursor: pointer;
-  font-family: var(--f-display);
+  font-family: var(--f-titulo);
 }
 .modulo-item summary::-webkit-details-marker{ display: none; }
 .modulo-numero{
@@ -165,7 +182,7 @@
 .modulo-item[open] .modulo-flecha{ transform: rotate(180deg); background: var(--naranja); border-color: var(--naranja); }
 .modulo-flecha svg{ width: 1rem; height: 1rem; }
 .modulo-item p{
-  font-family: var(--f-body);
+  font-family: var(--f-cuerpo);
   font-style: italic;
   font-size: 1.02rem;
   color: var(--salvia-baja);
@@ -182,12 +199,12 @@
 }
 .detalle-card{
   padding: var(--espacio-m);
-  border: 1.5px solid rgba(20,19,15,.15);
+  border: 1.5px solid rgba(0,0,0,.15);
   border-radius: var(--radio-organico);
 }
 .detalle-card .ojo{ color: var(--naranja); }
 .detalle-valor{
-  font-family: var(--f-display);
+  font-family: var(--f-titulo);
   font-size: 1.8rem;
   margin: .5rem 0;
   text-transform: uppercase;
@@ -236,22 +253,428 @@
   font-weight: 600;
 }
 
+.curso-titulo-amplio{ margin-bottom: 3rem; }
+.curso-titulo-compacto{ margin-bottom: 1.6rem; }
+
+/* ---------- TÍTULO COMPARTIDO — nuevas secciones ---------- */
+.seccion-titulo-f{
+  font-family: var(--f-titulo);
+  font-weight: 900;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin-bottom: var(--espacio-l);
+}
+
+/* ---------- PROCESO — 6 etapas ---------- */
+.proceso-etapas{ background: var(--negro); color: var(--crema); }
+.proceso-etapas .ojo{ color: var(--naranja); }
+.proceso-header{ margin-bottom: var(--espacio-l); }
+.proceso-lista{
+  list-style: none;
+  padding: 0; margin: 0;
+  border-top: 1px solid rgba(241,237,228,.12);
+}
+.proceso-etapa{
+  display: grid;
+  grid-template-columns: 3.5rem 1fr 1fr;
+  gap: 0 var(--espacio-m);
+  align-items: baseline;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(241,237,228,.12);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.proceso-num{
+  font-family: var(--f-ui);
+  font-weight: 700;
+  font-size: .75rem;
+  color: var(--naranja);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding-top: .2em;
+}
+.proceso-etapa-titulo{
+  font-family: var(--f-titulo);
+  font-weight: 800;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: var(--crema);
+}
+.proceso-etapa-desc{
+  font-family: var(--f-cuerpo);
+  font-weight: 300;
+  font-size: .92rem;
+  color: rgba(241,237,228,.6);
+  line-height: 1.55;
+  text-align: right;
+}
+
+/* ---------- CASOS REALES — antes / después ---------- */
+.casos-reales{ background: var(--crema); }
+.casos-reales .seccion-titulo-f{ max-width: 22ch; }
+.caso-comparacion{
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.caso-imagen{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.caso-antes{ background: var(--oliva); }
+.caso-despues{
+  background: var(--burdeos);
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.9s cubic-bezier(.4,0,.2,1) .3s;
+}
+.caso-comparacion.activo .caso-despues{
+  clip-path: inset(0 0% 0 0);
+}
+.caso-ph-inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  user-select: none;
+  pointer-events: none;
+}
+.caso-ph-label{
+  font-family: var(--f-ui);
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .1em;
+  color: rgba(241,237,228,.55);
+  text-transform: uppercase;
+}
+.caso-ph-sub{
+  font-family: var(--f-cuerpo);
+  font-size: .75rem;
+  color: rgba(241,237,228,.38);
+}
+.caso-tag{
+  position: absolute;
+  bottom: 1rem;
+  font-family: var(--f-ui);
+  font-weight: 700;
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--crema);
+  background: rgba(0,0,0,.4);
+  padding: .28em .7em;
+  border-radius: 100px;
+  backdrop-filter: blur(4px);
+}
+.caso-tag--antes{ left: 1rem; }
+.caso-tag--despues{ right: 1rem; }
+.caso-caption{
+  font-family: var(--f-cuerpo);
+  font-size: .85rem;
+  color: var(--negro-suave);
+  margin-top: var(--espacio-s);
+  letter-spacing: .01em;
+}
+
+/* ---------- CAPACIDADES — lo que vas a poder hacer ---------- */
+.capacidades{ background: var(--crema-alta); }
+.capacidades-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-m);
+  list-style: none;
+  padding: 0; margin: 0;
+}
+.capacidad-item{
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  padding: var(--espacio-m);
+  border: 1.5px solid rgba(0,0,0,.1);
+  border-radius: 3px;
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+.capacidad-item:hover{
+  border-color: var(--naranja);
+  transform: translateY(-4px);
+}
+.capacidad-icono{
+  width: 2.8rem; height: 2.8rem;
+  border: 1.5px solid rgba(0,0,0,.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.capacidad-icono svg{ width: 1.1rem; height: 1.1rem; }
+.capacidad-titulo{
+  font-family: var(--f-titulo);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.capacidad-desc{
+  font-family: var(--f-cuerpo);
+  font-weight: 300;
+  font-size: .88rem;
+  color: var(--negro-suave);
+  line-height: 1.55;
+}
+
+/* ---------- CTA FINAL — Tu primera transformación ---------- */
+/* ---------- NUEVA ESTRUCTURA DEL CURSO ---------- */
+.casos-bajada,
+.curso-metodo-bajada{
+  font-family: var(--f-cuerpo);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--negro-suave);
+  max-width: 58ch;
+  margin-top: calc(var(--espacio-l) * -0.7);
+  margin-bottom: var(--espacio-m);
+}
+.casos-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-m);
+}
+.caso-card{ transition-delay: calc(var(--i, 0) * 90ms); }
+.caso-slider{
+  --pos: 50%;
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-radius: 3px;
+  background: linear-gradient(135deg, rgba(71,75,53,.92), rgba(97,44,45,.88)), var(--oliva);
+  cursor: ew-resize;
+  touch-action: none;
+}
+.caso-slider::before,
+.alumno-foto::before{
+  content: 'Reemplazar imagen';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-ui);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(241,237,228,.46);
+  pointer-events: none;
+}
+.caso-slider-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.caso-slider-img--antes{ filter: saturate(.75) contrast(.92); }
+.caso-slider-despues{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(0 0 0 var(--pos));
+}
+.caso-slider-handle{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 2.8rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--crema);
+  transform: translateX(-50%);
+  cursor: ew-resize;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.caso-slider-handle::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(241,237,228,.92);
+  transform: translateX(-50%);
+}
+.caso-slider-handle span{
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  background: var(--crema);
+  color: var(--negro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-ui);
+  font-size: .72rem;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 .35rem 1.2rem rgba(0,0,0,.22);
+}
+.caso-tag{ top: 1rem; bottom: auto; }
+.capacidades-grid{ grid-template-columns: repeat(4, 1fr); }
+.curso-metodo{ background: var(--crema-alta); }
+.curso-metodo .incluye-grid{ grid-template-columns: repeat(3, 1fr); }
+.curso-metodo .incluye-item{ min-height: 12rem; }
+.proyecto-final{ background: var(--crema); }
+.proyecto-final-grid{
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: var(--espacio-l);
+  align-items: center;
+}
+.proyecto-final-grid p{
+  font-family: var(--f-cuerpo);
+  font-weight: 300;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: var(--negro-suave);
+  max-width: 48ch;
+}
+.proyecto-final-imagen{
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.proyecto-final-imagen img{ width: 100%; height: 100%; object-fit: cover; }
+.alumnos{ background: var(--crema-alta); }
+.alumnos .seccion-titulo-f{ max-width: 19ch; }
+.alumnos-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-m);
+}
+.alumno-card{
+  padding: var(--espacio-m);
+  border: 1.5px solid rgba(0,0,0,.1);
+  border-radius: 3px;
+  background: var(--crema);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.alumno-foto{
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 3px;
+  background: linear-gradient(135deg, var(--oliva), var(--burdeos));
+  margin-bottom: var(--espacio-s);
+}
+.alumno-foto img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+.alumno-card blockquote{
+  font-family: var(--f-cuerpo);
+  font-weight: 300;
+  font-size: .96rem;
+  line-height: 1.6;
+  color: var(--negro-suave);
+  margin: 0 0 var(--espacio-s);
+}
+.alumno-card p{
+  font-family: var(--f-ui);
+  font-size: .78rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.cta-final .ojo{ color: rgba(241,237,228,.5); }
+.cta-final .envoltura{
+  margin: 0 auto;
+  max-width: 72rem;
+  text-align: center;
+}
+.cta-final .cta-final-titulo{
+  font-family: var(--f-titulo);
+  font-weight: 900;
+  font-size: clamp(3rem, 7vw, 5.6rem);
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin-block: var(--espacio-m);
+  margin-inline: auto;
+  width: fit-content;
+  max-width: 100%;
+  text-align: center;
+}
+.cta-final .cta-final-titulo span{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.cta-final .cta-final-texto{
+  font-family: var(--f-cuerpo);
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: rgba(241,237,228,.55);
+  max-width: none;
+  white-space: nowrap;
+}
+.cta-final-acciones{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: var(--espacio-m);
+}
+
 /* ---------- RESPONSIVE TABLET ---------- */
 @media (max-width: 1024px){
   .curso-hero-grid{ grid-template-columns: 1fr; }
+  /* texto arriba, imagen abajo — sin diagonal en layout apilado */
+  .curso-hero-grid > div:first-child{ padding-right: 0; }
   .curso-hero-imagen{ order: -1; aspect-ratio: 16/10; }
   .curso-datos-rapidos{ grid-template-columns: repeat(2, 1fr); gap: var(--espacio-m); }
   .curso-presentacion-grid{ grid-template-columns: 1fr; gap: var(--espacio-m); }
   .incluye-grid{ grid-template-columns: repeat(2, 1fr); }
   .detalles-grid{ grid-template-columns: 1fr; }
   .curso-quien-grid{ grid-template-columns: 1fr; gap: var(--espacio-m); }
+  /* nuevas secciones */
+  .proceso-etapa{ grid-template-columns: 3rem 1fr; }
+  .proceso-etapa-desc{ grid-column: 1 / -1; text-align: left; padding-top: .4rem; }
+  .capacidades-grid{ grid-template-columns: repeat(2, 1fr); }
+  .casos-grid,
+  .alumnos-grid,
+  .proyecto-final-grid{ grid-template-columns: 1fr; }
+  .curso-metodo .incluye-grid{ grid-template-columns: repeat(3, 1fr); }
+  .caso-slider{ aspect-ratio: 4/3; }
 }
 
 /* ---------- RESPONSIVE MOBILE ---------- */
 @media (max-width: 720px){
   .curso-hero{ padding-top: 7.5rem; }
+  .curso-hero-titulo{ font-size: clamp(1.8rem, 7vw, 2.6rem); }
   .curso-datos-rapidos{ grid-template-columns: 1fr 1fr; }
   .incluye-grid{ grid-template-columns: 1fr; }
   .modulo-titulo{ font-size: 1rem; }
   .modulo-item p{ padding-left: 0; margin-top: .5rem; }
+  /* nuevas secciones */
+  .proceso-etapa{ grid-template-columns: 2.5rem 1fr; padding: 1.2rem 0; }
+  .capacidades-grid{ grid-template-columns: 1fr; }
+  .casos-grid,
+  .curso-metodo .incluye-grid,
+  .alumnos-grid{ grid-template-columns: 1fr; }
+  .cta-final .cta-final-texto{ white-space: normal; }
 }

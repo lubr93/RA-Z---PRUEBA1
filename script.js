@@ -378,6 +378,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- 10b. COMPARACIÓN ANTES/DESPUÉS ---------- */
+  document.querySelectorAll('[data-before-after]').forEach((slider) => {
+    const handle = slider.querySelector('.caso-slider-handle');
+    if (!handle) return;
+
+    function actualizarComparacion(clientX) {
+      const rect = slider.getBoundingClientRect();
+      const porcentaje = ((clientX - rect.left) / rect.width) * 100;
+      const limitado = Math.max(8, Math.min(92, porcentaje));
+      slider.style.setProperty('--pos', `${limitado}%`);
+    }
+
+    function iniciarArrastre(evento) {
+      evento.preventDefault();
+      const pointerId = evento.pointerId;
+      handle.setPointerCapture(pointerId);
+      actualizarComparacion(evento.clientX);
+
+      function mover(puntero) {
+        actualizarComparacion(puntero.clientX);
+      }
+
+      function soltar() {
+        handle.releasePointerCapture(pointerId);
+        handle.removeEventListener('pointermove', mover);
+        handle.removeEventListener('pointerup', soltar);
+        handle.removeEventListener('pointercancel', soltar);
+      }
+
+      handle.addEventListener('pointermove', mover);
+      handle.addEventListener('pointerup', soltar);
+      handle.addEventListener('pointercancel', soltar);
+    }
+
+    handle.addEventListener('pointerdown', iniciarArrastre);
+    slider.addEventListener('pointerdown', (evento) => {
+      if (evento.target === handle || handle.contains(evento.target)) return;
+      actualizarComparacion(evento.clientX);
+    });
+  });
+
   /* ---------- 11. FORMULARIO DE CONTACTO (footer) ---------- */
   const formularioProyecto = document.getElementById('formularioProyecto');
   const footerMsg = document.getElementById('footerMsg');
@@ -402,7 +443,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-
 
 
 

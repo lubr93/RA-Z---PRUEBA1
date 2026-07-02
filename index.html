@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAÍZ — Restauración integral de muebles y oficios artesanales</title>
+<title>RAÍZ — Restauración integral de muebles</title>
 <meta name="description" content="RAÍZ transforma muebles con memoria en piezas contemporáneas. Restauración integral, esterilla y fibras naturales, rediseño y terminación artesanal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=Archivo+Expanded:wght@700;800;900&family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;800;900&family=Space+Grotesk:wght@400;600;700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/fam1two.css">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -63,6 +63,48 @@
 
   <a href="#historia" class="finale-cta hero-cta"><span>Descubrí más</span></a>
 
+</section>
+
+<!-- ============================================================
+     PRINCIPIOS
+     ============================================================ -->
+<section class="principios" id="principios">
+  <div class="envoltura principios-contenido">
+    <h2 class="principios-titulo reveal">
+      <span>Cuatro principios.</span>
+      <span>Sin excepciones.</span>
+    </h2>
+    <p class="principios-bajada reveal">
+      Los criterios que guían cada decisión, desde el primer diagnóstico<br>
+      hasta el resultado final.
+    </p>
+
+    <div class="principios-grid">
+      <article class="principio-item reveal" style="--i:0">
+        <span class="principio-icono" style="--icono:url('assets/icons/madera.svg')" aria-hidden="true"></span>
+        <h3>Materiales con historia</h3>
+        <p>Trabajamos con lo que ya existe. La materia prima llegó antes que nosotros.</p>
+      </article>
+
+      <article class="principio-item reveal" style="--i:1">
+        <span class="principio-icono" style="--icono:url('assets/icons/compas.svg')" aria-hidden="true"></span>
+        <h3>Oficio artesanal</h3>
+        <p>Cada intervención parte de un diagnóstico. No hay fórmulas, hay criterio.</p>
+      </article>
+
+      <article class="principio-item reveal" style="--i:2">
+        <span class="principio-icono" style="--icono:url('assets/icons/reciclaje.svg')" aria-hidden="true"></span>
+        <h3>Restaurar es decidir</h3>
+        <p>El mueble que ya tenés es el punto de partida.</p>
+      </article>
+
+      <article class="principio-item reveal" style="--i:3">
+        <span class="principio-icono" style="--icono:url('assets/icons/reloj.svg')" aria-hidden="true"></span>
+        <h3>Hecho para durar</h3>
+        <p>Construido para resistir el tiempo.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
 <!-- ============================================================
@@ -147,7 +189,10 @@
 Producir desde cero cuando ya existe algo que funciona no es progreso. Es indolencia disfrazada de innovación. </p>
     </div>
     <figure class="manifiesto-card reveal">
-      <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1100&auto=format&fit=crop" alt="Detalle de un mueble restaurado en madera">
+      <video class="manifiesto-video" autoplay muted loop playsinline preload="metadata" aria-label="Proceso de diseño y restauración de muebles">
+        <source src="assets/videos/video-diseño.mp4" type="video/mp4">
+        Tu navegador no soporta video HTML5.
+      </video>
     </figure>
   </div>
 </section>
@@ -167,16 +212,18 @@ Producir desde cero cuando ya existe algo que funciona no es progreso. Es indole
   Cuatro disciplinas que conviven en cada pieza:<br>
   la técnica, la materia, la forma y el detalle final.
 </p>
+    </div>
 
     <div class="oficios-grid reveal-fila" id="oficiosGrid">
       <!-- Card 1: con enlace al curso -->
-      <article class="card-oficio reveal" style="--i:0">
+      <article class="card-oficio card-oficio--destacado reveal" style="--i:0">
         <div class="card-oficio-imagen">
-          <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=800&auto=format&fit=crop" alt="Restauración integral de un mueble de madera">
+          <img src="assets/images/curso1.png" alt="Restauración integral de un mueble de madera">
         </div>
         <div class="card-oficio-cuerpo">
-          <span class="card-oficio-numero">01</span>
+          <span class="card-oficio-numero">01 — Curso destacado</span>
           <h3 class="card-oficio-titulo">Servicio integral de restauración</h3>
+          <p class="card-oficio-descripcion">El recorrido insignia de RAÍZ: diagnóstico, intervención estructural, terminación y criterio estético para restaurar una pieza de principio a fin.</p>
           <a href="curso-restauracion.html" class="card-oficio-enlace">
             <span>Ver más</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true"><circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle><path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path></svg>
@@ -217,7 +264,7 @@ Producir desde cero cuando ya existe algo que funciona no es progreso. Es indole
       <!-- Card 4 -->
       <article class="card-oficio reveal" style="--i:3">
         <div class="card-oficio-imagen">
-          <img src="assets/images/curso4.jpeg" alt="Detalle de terminación y pulido de madera">
+          <img src="assets/images/curso4bis.png" alt="Detalle de terminación y pulido de madera">
         </div>
         <div class="card-oficio-cuerpo">
           <span class="card-oficio-numero">04</span>
@@ -371,6 +418,9 @@ Producir desde cero cuando ya existe algo que funciona no es progreso. Es indole
   </div>
 </section>
 
+<!-- ============================================================
+     STATEMENT FINAL
+     ============================================================ -->
 <section class="statement">
   <div class="envoltura">
     <h2>TRANSFORMÁ<span class="sep"> · </span><br>NO REEMPLACES</h2>
@@ -381,32 +431,30 @@ Producir desde cero cuando ya existe algo que funciona no es progreso. Es indole
 <!-- ============================================================
      FOOTER
      ============================================================ -->
-<footer class="footer">
+<footer class="footer" id="contacto">
   <div class="envoltura">
-
-    <!-- [MODIFICAR] Columnas: logo/redes | servicios | explorar | formulario -->
     <div class="footer-top">
-
       <div class="footer-marca">
         <video class="footer-marca-video" autoplay muted playsinline preload="metadata" aria-label="Animación RAÍZ">
-          <source src="assets/videos/video-silla2.mp4" type="video/mp4">
+          <source src="assets/videos/video-silla1.mp4" type="video/mp4">
         </video>
         <div class="footer-redes">
-          <!-- [MODIFICAR] Reemplazar href="#" con URLs reales de redes sociales -->
+          <a href="#" aria-label="Facebook">
+            <img src="assets/icons/facebook.svg.svg" alt="" aria-hidden="true">
+          </a>
           <a href="#" aria-label="Instagram">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.318.92.598.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.598-.92c-.11-.281-.24-.705-.275-1.485-.039-.843-.046-1.096-.046-3.232s.007-2.388.046-3.231c.035-.78.166-1.204.275-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+            <img src="assets/icons/instagram.svg.svg" alt="" aria-hidden="true">
           </a>
           <a href="#" aria-label="TikTok">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/></svg>
+            <img src="assets/icons/tiktok.svg.svg" alt="" aria-hidden="true">
           </a>
           <a href="#" aria-label="Pinterest">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.713-.663 2.664-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0"/></svg>
+            <img src="assets/icons/pinterest.svg.svg" alt="" aria-hidden="true">
           </a>
         </div>
       </div>
 
       <div class="footer-columna">
-        <!-- [MODIFICAR] Links de servicios -->
         <h4>Servicios</h4>
         <ul>
           <li><a href="#oficios">Restauración integral</a></li>
@@ -417,7 +465,6 @@ Producir desde cero cuando ya existe algo que funciona no es progreso. Es indole
       </div>
 
       <div class="footer-columna">
-        <!-- [MODIFICAR] Links de navegación secundaria -->
         <h4>Explorar</h4>
         <ul>
           <li><a href="#hero">Sobre RAÍZ</a></li>
@@ -426,38 +473,16 @@ Producir desde cero cuando ya existe algo que funciona no es progreso. Es indole
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
+    </div>
 
-      <div class="footer-form" id="footerForm">
-        <!-- [MODIFICAR] Texto del label y placeholder del formulario -->
-        <label for="inputProyecto">¿Qué pieza querés transformar?</label>
-        <form id="formularioProyecto">
-          <div class="footer-form-fila">
-            <input type="text" id="inputProyecto" placeholder="Contanos tu proyecto" required>
-            <button type="submit" aria-label="Enviar">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </button>
-          </div>
-        </form>
-        <p class="footer-msg" id="footerMsg"></p>
-      </div>
-
-    </div><!-- /footer-top -->
-
-    
-    
-
-    <!-- Logo grande RAÍZ + botón volver arriba -->
     <div class="footer-logo-fila">
-  <span class="footer-logo-mark">RAÍZ</span>
+      <span class="footer-logo-mark">RAÍZ</span>
+      <button class="circulo-nav" id="footerArriba" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
 
-  <button class="circulo-nav" id="footerArriba" aria-label="Volver arriba">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
-  </button>
-</div>
-
-  </div><!-- /envoltura -->
-
-  <!-- [MODIFICAR] Año y texto de copyright -->
   <div class="footer-bottom">
     <p>© 2026 RAÍZ. Todos los derechos reservados.</p>
   </div>
