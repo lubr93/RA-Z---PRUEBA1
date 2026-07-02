@@ -184,7 +184,7 @@
   <div class="envoltura">
     <div class="manifiesto-texto">
       <span class="ojo manifiesto-eyebrow reveal">02 — Nuestra filosofía</span>
-      <h2 class="titulo-display manifiesto-titulo reveal">RESTAURAMOS, REDISEÑAMOS Y REUTILIZAMOS<br><em> MUEBLES CON HISTORIA.</em></h2>
+      <h2 class="titulo-display manifiesto-titulo reveal">RESTAURAMOS, REDISEÑAMOS Y REUTILIZAMOS<br><em> MUEBLES CON HISTORIA</em></h2>
       <p class="manifiesto-secundario reveal">Somos un taller especializado en darle una nueva vida a piezas que ya demostraron que funcionan. Ofrecemos un servicio completo — diagnóstico, reparación estructural y rediseño — para que cada mueble vuelva a tener lugar en tu casa, sin necesidad de producir algo nuevo desde cero. </p>
     </div>
     <figure class="manifiesto-card reveal">
@@ -397,12 +397,36 @@
 </section>
 
 <!-- ============================================================
-     STATEMENT FINAL
+     CTA CONTACTO — dos columnas, imagen + formulario
      ============================================================ -->
-<section class="statement">
-  <div class="envoltura">
-    <h2>Restauramos piezas con historia<br>para que sigan formando parte de la tuya</h2>
-    <p>RAÍZ — Restauración integral de muebles, Buenos Aires</p>
+<section class="cta-contacto">
+  <div class="cta-contacto__imagen">
+    <img src="assets/images/footer1.jpeg" alt="Muestras de maderas y colores para restauración">
+    <div class="cta-contacto__overlay"></div>
+  </div>
+  <div class="cta-contacto__form-panel">
+    <h2 class="titulo-display cta-contacto__titulo">RESTAURAMOS PIEZAS CON HISTORIA<br>PARA QUE SIGAN FORMANDO PARTE DE LA TUYA</h2>
+    <p class="cta-contacto__subtitulo">Mandanos los detalles de tu mueble y empezamos el diagnóstico</p>
+    <form class="cta-contacto__form" id="form-contacto" novalidate>
+      <div class="cta-contacto__campo">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+      <div class="cta-contacto__campo">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono">
+      </div>
+      <div class="cta-contacto__campo">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="cta-contacto__campo">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn--nogal-invertido">Enviar consulta</button>
+    </form>
+    <p class="cta-contacto__confirmacion" id="ctaContactoMsg" role="status" aria-live="polite"></p>
   </div>
 </section>
 

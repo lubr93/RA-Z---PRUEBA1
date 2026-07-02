@@ -381,7 +381,10 @@
 }
 
 /* ---------- CAPACIDADES — lo que vas a poder hacer ---------- */
-.capacidades{ background: var(--crema-alta); }
+.capacidades{
+  background: #461514;
+  color: var(--color-hueso);
+}
 .capacidades-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -395,13 +398,13 @@
   align-items: center;
   gap: 0;
   padding: var(--espacio-m);
-  border: 1.5px solid color-mix(in srgb, var(--color-nogal) 10%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--color-hueso) 18%, transparent);
   border-radius: 3px;
   text-align: center;
   transition-delay: calc(var(--i, 0) * 80ms);
 }
 .capacidad-item:hover{
-  border-color: var(--naranja);
+  border-color: var(--color-terracota);
   transform: translateY(-4px);
 }
 .capacidad-icono{
@@ -409,7 +412,7 @@
   width: 64px;
   height: 64px;
   margin-bottom: 1.35rem;
-  background: var(--negro-suave);
+  background: var(--color-terracota);
   -webkit-mask: var(--icono) center / contain no-repeat;
   mask: var(--icono) center / contain no-repeat;
   flex-shrink: 0;
@@ -421,12 +424,13 @@
   letter-spacing: 0;
   text-transform: uppercase;
   max-width: 18ch;
+  color: var(--color-hueso);
 }
 .capacidad-desc{
   font-family: var(--font-body);
   font-weight: 300;
   font-size: .88rem;
-  color: var(--negro-suave);
+  color: color-mix(in srgb, var(--color-hueso) 75%, transparent);
   line-height: 1.55;
   max-width: 24ch;
   margin-top: .75rem;

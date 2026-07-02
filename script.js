@@ -490,5 +490,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- 12. FORMULARIO CTA CONTACTO ---------- */
+  const formContacto = document.getElementById('form-contacto');
+  const ctaContactoMsg = document.getElementById('ctaContactoMsg');
+
+  if (formContacto) {
+    formContacto.addEventListener('submit', (evento) => {
+      evento.preventDefault();
+
+      if (!formContacto.checkValidity()) {
+        formContacto.reportValidity();
+        return;
+      }
+
+      const boton = formContacto.querySelector('button[type="submit"]');
+      const textoOriginal = boton.textContent;
+
+      boton.disabled = true;
+      boton.textContent = 'Enviando...';
+
+      // Aquí se conectaría con un backend o servicio de email real.
+      setTimeout(() => {
+        formContacto.reset();
+        formContacto.hidden = true;
+        boton.disabled = false;
+        boton.textContent = textoOriginal;
+        if (ctaContactoMsg) {
+          ctaContactoMsg.textContent = 'Recibimos tu mensaje, te contactamos pronto.';
+        }
+      }, 900);
+    });
+  }
+
 });
 

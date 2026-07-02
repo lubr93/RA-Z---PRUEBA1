@@ -1837,36 +1837,150 @@ body.menu-abierto{
   line-height: 1;
 }
 
-/* ---------- 14c. STATEMENT FINAL ---------- */
-.statement{
-  background:
-    linear-gradient(color-mix(in srgb, var(--color-nogal) 38%, transparent), color-mix(in srgb, var(--color-nogal) 52%, transparent)),
-    url("assets/images/banner1.png") center / cover no-repeat;
-  color: var(--crema);
-  padding: clamp(6rem, 12vw, 10rem) 0;
-  text-align: center;
-  overflow: hidden;
+/* ---------- 14c. CTA CONTACTO — imagen + formulario ---------- */
+.cta-contacto{
+  display: flex;
+  min-height: 600px;
+}
+.cta-contacto__imagen{
+  flex: 1 1 50%;
   position: relative;
+  overflow: hidden;
 }
-.statement h2{
-  font-family: var(--font-display);
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: clamp(32px, 4.8vw, 64px);
-  line-height: 1.14;
-  color: var(--crema);
-  max-width: min(92rem, 92vw);
-  margin-inline: auto;
-  text-wrap: balance;
+.cta-contacto__imagen img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.statement h2 .sep{ color: var(--naranja); }
-.statement p{
+.cta-contacto__overlay{
+  position: absolute;
+  inset: 0;
+  background: var(--color-terracota);
+  opacity: .2;
+  mix-blend-mode: multiply;
+}
+.cta-contacto__form-panel{
+  flex: 1 1 50%;
+  background: var(--color-nogal);
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.cta-contacto__titulo{
+  font-size: clamp(17px, 1.6vw, 32px);
+  color: var(--color-hueso);
+  max-width: none;
+  margin: 0 0 1rem;
+}
+.cta-contacto__subtitulo{
   font-family: var(--font-body);
-  font-size: var(--tam-cuerpo);
-  color: color-mix(in srgb, var(--color-hueso) 55%, transparent);
-  margin-top: clamp(1.25rem, 2.2vw, 2rem);
-  font-weight: 400;
-  letter-spacing: .02em;
+  font-size: var(--tam-bajada);
+  color: color-mix(in srgb, var(--color-hueso) 85%, transparent);
+  max-width: 480px;
+  margin: 0 0 40px;
+}
+.cta-contacto__form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 480px;
+}
+.cta-contacto__campo{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.cta-contacto__form label{
+  font-family: var(--font-body);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--color-crudo);
+}
+.cta-contacto__form input,
+.cta-contacto__form textarea{
+  width: 100%;
+  background: var(--color-hueso);
+  color: var(--color-nogal);
+  border: none;
+  border-bottom: 2px solid var(--color-crudo);
+  border-radius: 3px;
+  padding: 12px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color .3s ease;
+}
+.cta-contacto__form input:focus-visible,
+.cta-contacto__form textarea:focus-visible{
+  outline: none;
+  border-color: var(--color-terracota);
+}
+.cta-contacto__form input:invalid:not(:placeholder-shown),
+.cta-contacto__form textarea:invalid:not(:placeholder-shown){
+  border-color: var(--color-terracota);
+}
+.btn--nogal-invertido{
+  background: var(--color-terracota);
+  color: var(--color-hueso);
+  border-color: var(--color-terracota);
+  margin-top: .5rem;
+}
+.btn--nogal-invertido:hover,
+.btn--nogal-invertido:focus-visible{
+  background: var(--color-hueso);
+  color: var(--color-nogal);
+  border-color: var(--color-hueso);
+}
+.btn--nogal-invertido:active{
+  background: var(--color-crudo);
+  color: var(--color-hueso);
+  border-color: var(--color-crudo);
+}
+.btn--nogal-invertido:disabled{
+  opacity: .65;
+  cursor: not-allowed;
+  transform: none;
+}
+.cta-contacto__confirmacion{
+  font-family: var(--font-body);
+  font-size: .88rem;
+  color: var(--color-hueso);
+  margin: 0;
+}
+.cta-contacto__confirmacion:empty{ display: none; }
+
+@media (max-width: 1024px){
+  .cta-contacto{
+    flex-direction: column;
+  }
+  .cta-contacto__imagen{
+    flex: none;
+    height: 360px;
+  }
+  .cta-contacto__form-panel{
+    padding: 56px 40px;
+  }
+  .cta-contacto__titulo{
+    font-size: clamp(14px, calc(3.6px + 2.77vw), 32px);
+  }
+}
+
+@media (max-width: 599px){
+  .cta-contacto__imagen{
+    height: 280px;
+  }
+  .cta-contacto__form-panel{
+    padding: 40px 24px;
+  }
+  .cta-contacto__subtitulo{
+    margin-bottom: 28px;
+  }
+  .btn--nogal-invertido{
+    width: 100%;
+  }
 }
 
 @media (max-width: 599px){
