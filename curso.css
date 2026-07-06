@@ -118,7 +118,7 @@
 .incluye-icono{
   width: 3rem; height: 3rem;
   border-radius: 50%;
-  background: var(--lila-baja);
+  background: var(--color-hueso);
   color: var(--negro);
   display: flex;
   align-items: center;
@@ -136,7 +136,7 @@
 }
 
 /* ---------- MÓDULOS (acordeón) ---------- */
-.curso-modulos{ background: var(--oliva); color: var(--crema); }
+.curso-modulos{ background: var(--color-nogal); color: var(--crema); }
 .curso-modulos .ojo{ color: var(--naranja); }
 .curso-modulos .seccion-titulo{ color: var(--crema); }
 .modulos-lista{
@@ -159,7 +159,7 @@
 .modulo-item summary::-webkit-details-marker{ display: none; }
 .modulo-numero{
   font-size: .85rem;
-  color: var(--lila);
+  color: var(--color-crudo);
   flex-shrink: 0;
   width: 2.4rem;
 }
@@ -184,7 +184,7 @@
   font-family: var(--font-body);
   font-style: italic;
   font-size: 1.02rem;
-  color: var(--salvia-baja);
+  color: var(--color-hueso);
   padding-bottom: var(--espacio-m);
   padding-left: 2.4rem;
   max-width: 60ch;
@@ -237,7 +237,7 @@
   left: 0; top: .5em;
   width: .55rem; height: .55rem;
   border-radius: 50%;
-  background: var(--salvia);
+  background: var(--color-nogal);
 }
 .lista-beneficios li::before{
   content: '';
@@ -326,7 +326,7 @@
   align-items: center;
   justify-content: center;
 }
-.caso-antes{ background: var(--oliva); }
+.caso-antes{ background: var(--color-nogal); }
 .caso-despues{
   background: var(--burdeos);
   clip-path: inset(0 100% 0 0);
@@ -365,7 +365,7 @@
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--color-hueso);
-  background: var(--color-oliva);
+  background: var(--color-nogal);
   padding: .28em .7em;
   border-radius: 100px;
   backdrop-filter: blur(4px);
@@ -461,7 +461,7 @@
   aspect-ratio: 4/5;
   overflow: hidden;
   border-radius: 3px;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--color-oliva) 92%, transparent), color-mix(in srgb, var(--color-nogal) 88%, transparent)), var(--oliva);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--color-nogal) 92%, transparent), color-mix(in srgb, var(--color-terracota) 40%, transparent)), var(--color-nogal);
   cursor: ew-resize;
   touch-action: none;
 }
@@ -623,8 +623,8 @@
   cursor: pointer;
   transition: transform .32s ease, box-shadow .32s ease, border-color .32s ease;
 }
-.alumno-card--claro{ background: var(--color-oliva); }
-.alumno-card--crudo{ background: var(--color-oliva); }
+.alumno-card--claro{ background: var(--color-nogal); }
+.alumno-card--crudo{ background: var(--color-nogal); }
 .alumno-card:hover,
 .alumno-card:focus-visible{
   border-color: color-mix(in srgb, var(--color-terracota) 30%, transparent);
