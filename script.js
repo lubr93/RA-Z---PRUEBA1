@@ -250,6 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- 4. BOTÓN VOLVER ARRIBA (flotante) ---------- */
   const volverArriba = document.getElementById('volverArriba');
+  const footerPrincipal = document.querySelector('.footer');
 
   function actualizarBotonVolverArriba(scrollActual) {
     if (!volverArriba) return;
@@ -260,11 +261,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function actualizarContrasteVolverArriba() {
+    if (!volverArriba || !footerPrincipal) return;
+    const footerTop = footerPrincipal.getBoundingClientRect().top;
+    const boton = volverArriba.getBoundingClientRect();
+    const botonCentro = boton.top + boton.height / 2;
+    volverArriba.classList.toggle('volver-arriba--footer', footerTop <= botonCentro);
+  }
+
   function irArriba() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   if (volverArriba) volverArriba.addEventListener('click', irArriba);
+  actualizarContrasteVolverArriba();
+  window.addEventListener('scroll', actualizarContrasteVolverArriba, { passive: true });
+  window.addEventListener('resize', actualizarContrasteVolverArriba);
 
   const footerArriba = document.getElementById('footerArriba');
   if (footerArriba) footerArriba.addEventListener('click', irArriba);
@@ -570,7 +582,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- 11. FORMULARIO DE CONTACTO (footer) ---------- */
+  /* ---------- 11. PREGUNTAS FRECUENTES ---------- */
+  document.querySelectorAll('.faq__item').forEach((item) => {
+    const button = item.querySelector('.faq__question');
+    const wrap = item.querySelector('.faq__answer-wrap');
+
+    if (!button || !wrap) return;
+
+    button.addEventListener('click', () => {
+      const isOpen = item.getAttribute('data-open') === 'true';
+
+      document.querySelectorAll('.faq__item').forEach((other) => {
+        const otherButton = other.querySelector('.faq__question');
+        const otherWrap = other.querySelector('.faq__answer-wrap');
+
+        other.setAttribute('data-open', 'false');
+        if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
+        if (otherWrap) otherWrap.style.maxHeight = null;
+      });
+
+      if (!isOpen) {
+        item.setAttribute('data-open', 'true');
+        button.setAttribute('aria-expanded', 'true');
+        wrap.style.maxHeight = `${wrap.scrollHeight}px`;
+      }
+    });
+  });
+
+  /* ---------- 12. FORMULARIO DE CONTACTO (footer) ---------- */
   const formularioProyecto = document.getElementById('formularioProyecto');
   const footerMsg = document.getElementById('footerMsg');
 
@@ -593,7 +632,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- 12. FORMULARIO CTA CONTACTO ---------- */
+  /* ---------- 13. FORMULARIO CTA CONTACTO ---------- */
   const formContacto = document.getElementById('form-contacto');
   const ctaContactoMsg = document.getElementById('ctaContactoMsg');
 

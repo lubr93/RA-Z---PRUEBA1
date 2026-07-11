@@ -21,6 +21,13 @@
     <a href="index.html" class="logo-raiz logo-header" aria-label="RAÍZ, inicio">
       RAÍZ
     </a>
+    <nav class="header-nav" aria-label="Navegación principal">
+      <a href="index.html#oficios" class="header-nav__link">Cursos</a>
+      <a href="index.html#capsula" class="header-nav__link">Muebles Cápsula</a>
+      <a href="index.html#manifiesto" class="header-nav__link">Nosotros</a>
+      <a href="index.html#contacto" class="header-nav__link">Contacto</a>
+      <a href="index.html#hero" class="header-nav__link">Inicio</a>
+    </nav>
     <button class="menu-toggle" type="button" aria-controls="siteMenu" aria-expanded="false">
       <span>MENÚ</span>
     </button>
@@ -296,7 +303,7 @@
             <img src="assets/images/capsula4bis.png" alt="Mesa de luz Bruma">
           </div>
           <div class="capsula-card__contenido">
-            <h3>Mesa de luz Bruma</h3>
+            <h3>Mesa de luz Nix</h3>
             <a href="#contacto" class="capsula-card__cta">Ver historia completa</a>
           </div>
         </article>
@@ -412,9 +419,8 @@
   <div class="envoltura">
     <div class="footer-top">
       <div class="footer-marca">
-        <video class="footer-marca-video" autoplay muted playsinline preload="metadata" aria-label="Animación RAÍZ">
-          <source src="assets/videos/video-silla1.mp4" type="video/mp4">
-        </video>
+        <span class="footer-logo-mark">RAÍZ</span>
+        <p class="footer-texto">Oficio y diseño para muebles que merecen seguir en pie.</p>
         <div class="footer-redes">
           <a href="#" aria-label="Facebook">
             <img src="assets/icons/facebook.svg.svg" alt="" aria-hidden="true">
@@ -432,31 +438,50 @@
       </div>
 
       <div class="footer-columna">
-        <h4>Servicios</h4>
+        <h4>EXPLORAR</h4>
         <ul>
-          <li><a href="#oficios">Restauración integral</a></li>
+          <li><a href="#hero">Sobre RAÍZ</a></li>
+          <li><a href="#manifiesto">Manifiesto</a></li>
           <li><a href="curso-restauracion.html">Cursos</a></li>
-          <li><a href="#capsula">Casos reales</a></li>
-          <li><a href="#contacto">Solicitar presupuesto</a></li>
+          <li><a href="curso-restauracion.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
         </ul>
       </div>
 
       <div class="footer-columna">
-        <h4>Explorar</h4>
-        <ul>
-          <li><a href="#hero">Sobre RAÍZ</a></li>
-          <li><a href="#manifiesto">Manifiesto</a></li>
-          <li><a href="#">Preguntas frecuentes</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
+        <h4>CONTACTO</h4>
+        <div class="footer-lista">
+          <!-- Reemplazar por teléfono real -->
+          <p class="footer-texto">Teléfono: +54 9 11 3456-7890</p>
+          <!-- Reemplazar por email real -->
+          <p class="footer-texto">Email: info@raizrestudio.com.ar</p>
+          <p class="footer-texto">Horario: Lun – Vie, 9 a 18 hs</p>
+          <a class="footer-link-destacado" href="#contacto">Solicitar presupuesto →</a>
+        </div>
+      </div>
+
+      <div class="footer-columna footer-columna--mapa">
+        <h4>NUESTRA LOCACIÓN</h4>
+        <p class="footer-texto">Trabajamos desde Palermo, Buenos Aires.</p>
+        <div class="footer-mapa">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.7!2d-58.4238!3d-34.5875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM1JzE1LjAiUyA1OMKwMjUnMjUuNyJX!5e0!3m2!1ses!2sar!4v1234567890"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de Palermo, Buenos Aires"></iframe>
+        </div>
       </div>
     </div>
 
   </div>
 
   <div class="footer-bottom">
-    <span class="footer-logo-mark">RAÍZ</span>
-    <p>© 2026 RAÍZ. Todos los derechos reservados.</p>
+    <nav class="footer-legales" aria-label="Legales">
+      <a href="#">Política de privacidad</a>
+      <a href="#">Preferencia de cookies</a>
+      <a href="#">Términos y condiciones</a>
+    </nav>
+    <p>@2026 RAÍZ. Todos los derechos reservados.</p>
   </div>
 </footer>
 
