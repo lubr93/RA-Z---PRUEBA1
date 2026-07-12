@@ -591,6 +591,67 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarMaterial(0);
   }
 
+  /* ---------- 9B. MATERIALES: capas de tapizado ---------- */
+  const tapizadoSection = document.querySelector('.materiales__tapizado');
+  const tapizadoLayers = {
+    tapizado: {
+      title: 'Tapizado',
+      text: 'Tela terracota, la decisión estética final. Se cambia sin tocar lo que hay debajo.'
+    },
+    'relleno-asiento': {
+      title: 'Relleno de asiento',
+      text: 'Espuma acanalada de alta densidad. Sostiene el peso sin perder forma con el tiempo.'
+    },
+    'estructura-lateral': {
+      title: 'Estructura lateral',
+      text: 'Panel de madera maciza. Se ve la veta: es la misma madera que sostiene todo el mueble.'
+    },
+    suspension: {
+      title: 'Suspensión',
+      text: 'Flejes de madera y resortes. Le dan al asiento su elasticidad, sin sacrificar firmeza.'
+    },
+    'relleno-respaldo': {
+      title: 'Relleno de respaldo',
+      text: 'Guata y fibra suelta. Da cuerpo al cojín superior, más blando que el del asiento.'
+    }
+  };
+
+  if (tapizadoSection) {
+    const tapizadoPanelTitle = tapizadoSection.querySelector('#tapizadoPanelTitle');
+    const tapizadoPanelText = tapizadoSection.querySelector('#tapizadoPanelText');
+    const tapizadoMobileList = tapizadoSection.querySelector('.tapizado__mobile-list');
+
+    if (tapizadoMobileList) {
+      tapizadoMobileList.innerHTML = Object.entries(tapizadoLayers).map(([id, layer], index) => `
+        <button class="tapizado__mobile-button" type="button" data-layer="${id}" aria-pressed="${index === 0 ? 'true' : 'false'}">
+          <span>${layer.title}</span>
+        </button>
+      `).join('');
+    }
+
+    const tapizadoButtons = Array.from(tapizadoSection.querySelectorAll('[data-layer]'));
+
+    function activarTapizado(layerId) {
+      const layer = tapizadoLayers[layerId];
+      if (!layer || !tapizadoPanelTitle || !tapizadoPanelText) return;
+
+      tapizadoPanelTitle.textContent = layer.title;
+      tapizadoPanelText.textContent = layer.text;
+
+      tapizadoButtons.forEach((button) => {
+        const activo = button.dataset.layer === layerId;
+        button.classList.toggle('is-active', activo);
+        button.setAttribute('aria-pressed', activo ? 'true' : 'false');
+      });
+    }
+
+    tapizadoButtons.forEach((button) => {
+      button.addEventListener('click', () => activarTapizado(button.dataset.layer));
+    });
+
+    activarTapizado('tapizado');
+  }
+
   /* ---------- 9. CARRUSEL MUEBLES CÁPSULA ---------- */
   const capsulaCards = Array.from(document.querySelectorAll('[data-capsula-card]'));
   const capsulaPrev = document.getElementById('capsulaPrev');
