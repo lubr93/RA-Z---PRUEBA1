@@ -158,6 +158,16 @@
 .curso-modulos{ background: var(--color-nogal); color: var(--crema); }
 .curso-modulos .ojo{ color: var(--naranja); }
 .curso-modulos .seccion-titulo{ color: var(--crema); }
+.curso-modulos-bajada{
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--tam-bajada);
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--color-hueso) 75%, transparent);
+  max-width: 58ch;
+  margin-top: var(--espacio-s);
+  margin-bottom: var(--espacio-m);
+}
 .modulos-lista{
   display: flex;
   flex-direction: column;
@@ -288,8 +298,7 @@
   margin: 0 0 var(--espacio-s);
 }
 
-.seccion-titulo-f,
-.curso-metodo .seccion-titulo{
+.seccion-titulo-f{
   font-family: var(--font-display);
   font-weight: 900;
   font-size: var(--tam-h2);
@@ -299,8 +308,7 @@
   margin: 0;
 }
 
-.seccion-titulo-f + p,
-.curso-metodo .seccion-titulo + .curso-metodo-bajada{
+.seccion-titulo-f + p{
   margin-top: var(--espacio-s);
 }
 
@@ -485,8 +493,7 @@
 
 /* ---------- CTA FINAL — Tu primera transformación ---------- */
 /* ---------- NUEVA ESTRUCTURA DEL CURSO ---------- */
-.casos-bajada,
-.curso-metodo-bajada{
+.casos-bajada{
   font-family: var(--font-body);
   font-weight: 300;
   font-size: var(--tam-bajada);
@@ -586,30 +593,6 @@
 }
 .caso-tag{ top: 1rem; bottom: auto; }
 .capacidades-grid{ grid-template-columns: repeat(4, 1fr); }
-.curso-metodo{ background: var(--crema-alta); }
-.curso-metodo .incluye-grid{ grid-template-columns: repeat(3, 1fr); }
-.curso-metodo .incluye-item{ min-height: 12rem; }
-.proyecto-final{ background: var(--crema); }
-.proyecto-final-grid{
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: var(--espacio-l);
-  align-items: center;
-}
-.proyecto-final-grid p{
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: var(--tam-bajada);
-  line-height: 1.55;
-  color: var(--negro-suave);
-  max-width: 48ch;
-}
-.proyecto-final-imagen{
-  aspect-ratio: 4/3;
-  overflow: hidden;
-  border-radius: 3px;
-}
-.proyecto-final-imagen img{ width: 100%; height: 100%; object-fit: cover; }
 .alumnos{
   background:
     linear-gradient(color-mix(in srgb, var(--color-hueso) 72%, transparent), color-mix(in srgb, var(--color-hueso) 72%, transparent)),
@@ -832,6 +815,7 @@
 
 .faq__media {
   position: relative;
+  min-width: 0;
   background: var(--nogal);
   overflow: hidden;
 }
@@ -848,6 +832,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 0;
   padding: var(--espacio-xl) clamp(2rem, 6vw, 4.5rem);
 }
 
@@ -864,13 +849,14 @@
 .faq__title {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: var(--tam-h2);
+  font-size: clamp(2.35rem, 4.8vw, 3.8rem);
   line-height: .98;
   letter-spacing: 0;
   text-transform: uppercase;
   color: var(--nogal);
   margin: 0 0 var(--espacio-s);
-  max-width: 14ch;
+  max-width: 18ch;
+  white-space: nowrap;
 }
 
 .faq__lead {
@@ -1009,6 +995,9 @@
 }
 
 .cta-final{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--color-nogal);
   color: var(--color-hueso);
 }
@@ -1021,11 +1010,11 @@
 .cta-final .cta-final-titulo{
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: var(--tam-h1);
+  font-size: clamp(2.3rem, 4.2vw, 4.2rem);
   line-height: .98;
   letter-spacing: 0;
   text-transform: uppercase;
-  margin-block: var(--espacio-s) var(--espacio-m);
+  margin-block: var(--espacio-s) var(--espacio-xs);
   margin-inline: auto;
   width: fit-content;
   max-width: 100%;
@@ -1049,7 +1038,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: var(--espacio-m);
+  margin-top: var(--espacio-xs);
 }
 .cta-final .btn-light:hover,
 .cta-final .btn-light:focus-visible{
@@ -1073,9 +1062,7 @@
   .proceso-etapa{ grid-template-columns: 3rem 1fr; }
   .proceso-etapa-desc{ grid-column: 1 / -1; text-align: left; padding-top: .4rem; }
   .capacidades-grid{ grid-template-columns: repeat(2, 1fr); }
-  .casos-grid,
-  .proyecto-final-grid{ grid-template-columns: 1fr; }
-  .curso-metodo .incluye-grid{ grid-template-columns: repeat(3, 1fr); }
+  .casos-grid{ grid-template-columns: 1fr; }
   .caso-slider{ aspect-ratio: 4/3; }
   .alumno-card{
     flex-basis: min(72vw, 22rem);
@@ -1085,15 +1072,15 @@
 /* ---------- RESPONSIVE MOBILE ---------- */
 @media (max-width: 599px){
   .curso-hero{ padding-top: 7.5rem; }
-  .curso-hero-titulo{ font-size: clamp(2.1rem, 8vw, 3.2rem); }
+  .curso-hero-titulo,
+  .cta-final .cta-final-titulo{ font-size: clamp(2.1rem, 8vw, 3.2rem); }
   .incluye-grid{ grid-template-columns: 1fr; }
   .modulo-titulo{ font-size: 1rem; }
   .modulo-item p{ padding-left: 0; margin-top: .5rem; }
   /* nuevas secciones */
   .proceso-etapa{ grid-template-columns: 2.5rem 1fr; padding: 1.2rem 0; }
   .capacidades-grid{ grid-template-columns: 1fr; }
-  .casos-grid,
-  .curso-metodo .incluye-grid{ grid-template-columns: 1fr; }
+  .casos-grid{ grid-template-columns: 1fr; }
   .alumnos .seccion-titulo-f span{
     white-space: normal;
   }
@@ -1117,6 +1104,4 @@
     grid-template-columns: 1fr;
   }
 }
-
-
 
