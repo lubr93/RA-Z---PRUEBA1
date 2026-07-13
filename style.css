@@ -15,14 +15,12 @@
   --color-terracota: #ee712e;
   --color-negro: #0c0c0c;
   --color-lila: #E0D8E5;
-  --color-gris: #5e5d5f;
 
   /* Aliases semanticos para componentes reutilizables */
   --hueso: var(--color-hueso);
   --crudo: var(--color-crudo);
   --nogal: var(--color-nogal);
   --terracota: var(--color-terracota);
-  --oliva: color-mix(in srgb, var(--color-nogal) 72%, var(--color-crudo));
 
   /* Aliases historicos: compatibilidad sin nuevos colores */
   --crema: var(--color-hueso);
@@ -30,24 +28,14 @@
   --negro: var(--color-negro);
   --negro-suave: var(--color-nogal);
   --naranja: var(--color-terracota);
-  --naranja-alta: var(--color-terracota);
   --burdeos: var(--color-nogal);
   --tinta: var(--color-negro);
-  --tinta-60: color-mix(in srgb, var(--color-negro) 60%, transparent);
-  --tinta-30: color-mix(in srgb, var(--color-negro) 30%, transparent);
 
   /* Tipografía por rol */
   --font-display: "Hanken Grotesk", sans-serif;
   --font-body: "Space Grotesk", sans-serif;
-  --font-accent: "Space Grotesk", sans-serif;
   --font-label: "Inter", sans-serif;
   --font-wordmark: "aquavit", var(--font-display);
-
-  /* Aliases historicos */
-  --f-titulo: var(--font-display);
-  --f-cuerpo: var(--font-body);
-  --f-ui: var(--font-label);
-  --f-marca: var(--font-wordmark);
 
   /* Escala tipografica fluida compartida */
   --text-display-xl: clamp(2.75rem, 7vw, 6.25rem);
@@ -74,7 +62,6 @@
   --espacio-m: 2rem;
   --espacio-l: 4rem;
   --espacio-xl: 7rem;
-  --espacio-xxl: 11rem;
 
   /* Layout */
   --ancho-max: 1600px;
@@ -99,7 +86,7 @@ html{
    Descomentá este bloque si querés modificar la barra lateral.
 
 html{
-  scrollbar-color: var(--color-terracota) var(--color-gris);
+  scrollbar-color: var(--color-terracota) var(--color-nogal);
 }
 ::-webkit-scrollbar{
   width: 12px;
@@ -811,7 +798,6 @@ body.menu-abierto{
   padding: clamp(2.4rem, 5.2vw, 5.3rem);
   border-radius: 30px;
   background: var(--color-nogal);
-  box-shadow: var(--sombra-suave);
   position: relative;
 }
 
@@ -939,15 +925,6 @@ body.menu-abierto{
   max-width: 52ch;
   color: color-mix(in srgb, var(--color-hueso) 78%, transparent);
 }
-.oficios-carousel{
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.oficios-flecha,
-.oficios-dots{
-  display: none;
-}
 .oficios-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1033,7 +1010,7 @@ body.menu-abierto{
   color: var(--color-terracota);
 }
 .card-oficio-estrellas{
-  font-family: var(--font-accent);
+  font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1;
   letter-spacing: .08em;
@@ -1067,7 +1044,7 @@ body.menu-abierto{
   width: fit-content;
   margin-top: auto;
   padding: .55rem .85rem;
-  font-family: var(--font-accent);
+  font-family: var(--font-body);
   font-size: clamp(1.05rem, 1.5vw, 1.35rem);
   font-weight: 700;
   line-height: 1;
@@ -1156,7 +1133,6 @@ body.menu-abierto{
   border-radius: 28px;
   overflow: hidden;
   background: var(--color-crudo);
-  box-shadow: var(--sombra-suave);
 }
 .manifiesto-card img,
 .manifiesto-video{
@@ -1263,7 +1239,6 @@ body.menu-abierto{
 }
 .materiales__visual{
   position: relative;
-  min-width: 0;
   min-height: clamp(20rem, 34vw, 28rem);
   aspect-ratio: 16 / 10;
   margin: 0;
@@ -1453,13 +1428,12 @@ body.menu-abierto{
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--color-terracota);
+  color: var(--color-nogal);
 }
 .materiales__spec dd{
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--tam-cuerpo);
-  color: var(--color-negro-suave);
 }
 .materiales__description{
   margin: 0;
@@ -1467,7 +1441,6 @@ body.menu-abierto{
   font-family: var(--font-body);
   font-size: var(--tam-cuerpo);
   line-height: 1.4;
-  color: var(--color-negro-suave);
 }
 @media (max-width: 1023px){
   .materiales__layout{
@@ -1476,7 +1449,6 @@ body.menu-abierto{
   }
   .materiales__visual{
     min-height: clamp(18rem, 36vw, 26rem);
-    align-self: start;
   }
   .materiales__tab{
     grid-template-columns: 3.4rem 1fr;
@@ -1705,7 +1677,7 @@ body.menu-abierto{
   max-width: 54rem;
   margin: .15rem auto 0;
   font-family: var(--font-body);
-  font-size: var(--tam-boton);
+  font-size: var(--tam-label);
   line-height: 1.45;
   color: color-mix(in srgb, var(--color-nogal) 54%, transparent);
   text-align: center;
@@ -2369,69 +2341,25 @@ body.menu-abierto{
   .historia-dots button.activo{
     width: 2rem;
   }
-  .oficios-carousel{
-    gap: .5rem;
-  }
-  .oficios-flecha,
-  .oficios-dots{
-    display: flex;
-  }
   .oficios-grid{
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 1.2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
     width: 100%;
-    max-width: 32rem;
+    max-width: 46rem;
     margin-inline: auto;
-  }
-  .oficios-grid::-webkit-scrollbar{
-    display: none;
-  }
-  .oficios-grid .card-oficio{
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-  }
-  .oficios-dots{
-    justify-content: center;
-    gap: .38rem;
-    margin-top: var(--espacio-m);
-  }
-  .oficios-dots button{
-    width: .34rem;
-    height: .34rem;
-    border-radius: 50%;
-    background: var(--negro);
-    opacity: .45;
-    transition: width var(--t-rapida), opacity var(--t-rapida), background var(--t-rapida);
-  }
-  .oficios-dots button.activo{
-    width: 1rem;
-    border-radius: 999px;
-    opacity: 1;
-    background: var(--naranja);
   }
   .capsula-grid{ grid-template-columns: repeat(2, 1fr); }
   .footer-top{ grid-template-columns: 1fr 1fr; gap: var(--espacio-m) var(--espacio-l); }
 }
 
 @media (max-width: 599px){
-  .oficios-carousel{
-    gap: .6rem;
-  }
   .oficios-grid{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
     max-width: 100%;
-    min-width: 0;
-    flex: 1 1 auto;
   }
   .card-oficio-imagen{ aspect-ratio: 4 / 3; }
-  .oficios-flecha{
-    width: 2.25rem;
-    height: 2.25rem;
-    flex-shrink: 0;
-  }
 }
 
 /* ---------- 19. RESPONSIVE: MOBILE ---------- */
@@ -2507,7 +2435,7 @@ body.menu-abierto{
   width: 100%;
   overflow: hidden;
   background: var(--color-hueso);
-  padding: clamp(.55rem, 1.2vw, 1rem) 0;
+  padding: clamp(2.4rem, 4.5vw, 4rem) 0;
 }
 
 .raiz-marquee__track {
@@ -2525,7 +2453,7 @@ body.menu-abierto{
 
 .raiz-marquee span {
   font-family: var(--font-display);
-  font-size: clamp(1.15rem, 2.1vw, 2rem);
+  font-size: clamp(1.55rem, 3vw, 2.85rem);
   font-weight: 900;
   line-height: 0.9;
   letter-spacing: -0.02em;
@@ -2721,14 +2649,11 @@ body.menu-abierto{
 }
 
 @media (max-width: 599px){
-  .cta-contacto{
-    min-height: auto;
-  }
   .cta-contacto__imagen{
-    display: none;
+    height: 96px;
   }
   .cta-contacto__form-panel{
-    padding: 2.25rem 1.25rem;
+    padding: 1.2rem 1rem;
   }
   .cta-contacto__form{
     gap: .55rem;
@@ -2798,12 +2723,12 @@ body.menu-abierto{
     max-width: 34ch;
   }
   .capsula-viewport{
-    width: min(100%, 18rem);
+    width: min(100%, 20.5rem);
     min-height: 480px;
     margin-inline: auto;
   }
   .capsula-card{
-    width: min(100%, 18rem);
+    width: min(100%, 20.5rem);
     padding: .6rem;
   }
   .capsula-card.is-prev,
@@ -2814,11 +2739,9 @@ body.menu-abierto{
   .capsula-flecha{
     position: absolute;
     top: 38%;
-    width: 2rem;
-    height: 2rem;
   }
-  .capsula-flecha--prev{ left: -.4rem; }
-  .capsula-flecha--next{ right: -.4rem; }
+  .capsula-flecha--prev{ left: 0; }
+  .capsula-flecha--next{ right: 0; }
 }
 
 @media (max-width: 599px){

@@ -1,0 +1,288 @@
+/* ============================================================
+   RAÍZ — kit-ui.css
+   Estilos específicos de kit-ui.html (guía de estilos interna).
+   Usa los mismos tokens definidos en style.css.
+   ============================================================ */
+
+/* ---------- HERO ---------- */
+.kit-hero{
+  padding: 10rem 0 var(--espacio-l);
+  background: var(--color-nogal);
+  color: var(--crema);
+}
+.kit-hero .ojo{ color: var(--color-terracota); }
+.kit-hero-titulo{
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--tam-h1);
+  line-height: .96;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: var(--espacio-s) 0;
+  max-width: 16ch;
+}
+.kit-hero-bajada{
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--tam-bajada);
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--color-hueso) 82%, transparent);
+  max-width: 56ch;
+}
+
+/* ---------- NAV INTERNA ---------- */
+.kit-nav{
+  position: sticky;
+  top: 4.6rem;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs) var(--espacio-m);
+  padding: var(--espacio-s) 0;
+  background: color-mix(in srgb, var(--color-hueso) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-nogal) 12%, transparent);
+}
+.kit-nav a{
+  font-family: var(--font-label);
+  font-size: var(--tam-label);
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--negro-suave);
+  transition: color var(--t-rapida);
+}
+.kit-nav a:hover,
+.kit-nav a:focus-visible{ color: var(--naranja); }
+
+/* ---------- BLOQUE / SECCIÓN ---------- */
+.kit-seccion:nth-of-type(odd){ background: var(--color-hueso); }
+.kit-seccion:nth-of-type(even){ background: var(--color-crudo); }
+.kit-seccion-desc{
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--tam-bajada);
+  line-height: 1.55;
+  color: var(--negro-suave);
+  max-width: 60ch;
+  margin: var(--espacio-s) 0 var(--espacio-l);
+}
+
+/* ---------- COLORES ---------- */
+.kit-color-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: var(--espacio-m);
+}
+.kit-color-card{ display: flex; flex-direction: column; gap: .6rem; }
+.kit-color-swatch{
+  aspect-ratio: 1.4 / 1;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--color-nogal) 12%, transparent);
+}
+.kit-color-nombre{
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: .95rem;
+  text-transform: uppercase;
+  color: var(--negro);
+}
+.kit-color-var,
+.kit-color-hex{
+  font-family: var(--font-label);
+  font-size: var(--tam-micro);
+  letter-spacing: .04em;
+  color: color-mix(in srgb, var(--color-negro) 60%, transparent);
+}
+
+/* ---------- TIPOGRAFÍA ---------- */
+.kit-font-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--espacio-m);
+  margin-bottom: var(--espacio-l);
+}
+.kit-font-card{
+  padding: var(--espacio-m);
+  background: var(--crema);
+  border-radius: var(--radio-organico-2);
+}
+.kit-font-rol{
+  font-family: var(--font-label);
+  font-size: var(--tam-micro);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--naranja);
+  margin-bottom: .6rem;
+  display: block;
+}
+.kit-font-muestra{
+  font-size: 2.2rem;
+  line-height: 1.05;
+  color: var(--negro);
+  margin-bottom: .6rem;
+}
+.kit-font-nombre{
+  font-family: var(--font-label);
+  font-size: var(--tam-cuerpo);
+  color: var(--negro-suave);
+}
+
+.kit-escala-fila{
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  align-items: baseline;
+  gap: var(--espacio-m);
+  padding: 1.1rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-nogal) 12%, transparent);
+}
+.kit-escala-fila:first-child{ border-top: 1px solid color-mix(in srgb, var(--color-nogal) 12%, transparent); }
+.kit-escala-token{
+  font-family: var(--font-label);
+  font-size: var(--tam-micro);
+  color: color-mix(in srgb, var(--color-negro) 55%, transparent);
+  letter-spacing: .04em;
+}
+.kit-escala-muestra{
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--negro);
+  line-height: 1.1;
+}
+
+/* ---------- BOTONES Y COMPONENTES INTERACTIVOS ---------- */
+#botones .envoltura{
+  padding-left: clamp(2rem, 7vw, 7rem);
+}
+.kit-fila{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-m);
+  margin-bottom: var(--espacio-m);
+}
+.kit-etiqueta{
+  width: 100%;
+  font-family: var(--font-label);
+  font-size: var(--tam-micro);
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-negro) 55%, transparent);
+  margin-bottom: -.4rem;
+}
+/* ---------- FORMULARIO ---------- */
+.kit-form-real{
+  width: min(100%, 42rem);
+  flex: none;
+}
+
+/* ---------- TARJETAS ---------- */
+.kit-cards-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--espacio-m);
+  max-width: 1180px;
+}
+
+/* ---------- ESPACIADO ---------- */
+.kit-espacio-fila{
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-m);
+  margin-bottom: var(--espacio-s);
+}
+.kit-espacio-token{
+  width: 6.5rem;
+  flex-shrink: 0;
+  font-family: var(--font-label);
+  font-size: var(--tam-micro);
+  color: var(--negro-suave);
+}
+.kit-espacio-barra{
+  height: 1.4rem;
+  background: var(--naranja);
+  border-radius: 4px;
+}
+
+/* ---------- TRANSICIONES ---------- */
+.kit-transiciones-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--espacio-m);
+  max-width: 46rem;
+}
+.kit-transicion{
+  aspect-ratio: 1.3 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  background: var(--color-nogal);
+  color: var(--crema);
+  border-radius: 14px;
+  cursor: default;
+  transform: translateY(0) scale(1);
+}
+.kit-transicion strong{
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: .95rem;
+}
+.kit-transicion span{
+  font-family: var(--font-label);
+  font-size: var(--tam-micro);
+  color: color-mix(in srgb, var(--color-hueso) 70%, transparent);
+}
+.kit-transicion--rapida{ transition: transform var(--t-rapida), background var(--t-rapida); }
+.kit-transicion--media{ transition: transform var(--t-media), background var(--t-media); }
+.kit-transicion--lenta{ transition: transform var(--t-lenta), background var(--t-lenta); }
+.kit-transicion:hover{
+  transform: translateY(-8px) scale(1.04);
+  background: var(--naranja);
+}
+
+/* ---------- ICONOS ---------- */
+.kit-iconos-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+  gap: var(--espacio-s);
+  max-width: 46rem;
+}
+.kit-icono-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  padding: var(--espacio-s);
+  background: var(--crema);
+  border-radius: 12px;
+}
+.kit-icono{
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-negro);
+  -webkit-mask: var(--icono) center / contain no-repeat;
+  mask: var(--icono) center / contain no-repeat;
+}
+.kit-icono-item span{
+  font-family: var(--font-label);
+  font-size: var(--tam-micro);
+  color: color-mix(in srgb, var(--color-negro) 60%, transparent);
+  text-align: center;
+}
+
+@media (max-width: 720px){
+  .kit-nav{ top: 0; }
+  .kit-escala-fila{ grid-template-columns: 5.5rem 1fr; }
+  .kit-cards-grid{ grid-template-columns: 1fr; }
+  .kit-form-real{ width: 100%; }
+}
+
+@media (min-width: 721px) and (max-width: 1024px){
+  .kit-cards-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

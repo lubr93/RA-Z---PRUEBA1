@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit UI — Guía de estilos RAÍZ</title>
+<meta name="description" content="Guía de estilos de RAÍZ: paleta de colores, tipografía, botones, formularios, tarjetas, espaciado y efectos usados en todo el sitio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;800;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/fam1two.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="detalle.css">
+<link rel="stylesheet" href="kit-ui.css">
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER - idéntico al del resto del sitio para mantener identidad
+     ============================================================ -->
+<header class="header" id="header">
+  <div class="envoltura">
+    <a href="index.html" class="logo-raiz logo-header" aria-label="RAÍZ, inicio">
+      RAÍZ
+    </a>
+    <nav class="header-nav" aria-label="Navegación principal">
+      <a href="index.html#oficios" class="header-nav__link">Cursos</a>
+      <a href="index.html#capsula" class="header-nav__link">Muebles Cápsula</a>
+      <a href="index.html#manifiesto" class="header-nav__link">Nosotros</a>
+      <a href="index.html#contacto" class="header-nav__link">Contacto</a>
+      <a href="index.html#hero" class="header-nav__link">Inicio</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-controls="siteMenu" aria-expanded="false">
+      <span>MENÚ</span>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="kit-hero">
+  <div class="envoltura">
+    <span class="ojo reveal">— Guía de estilos</span>
+    <h1 class="kit-hero-titulo reveal">Kit UI de RAÍZ</h1>
+    <p class="kit-hero-bajada reveal">Todos los elementos visuales del sitio en un solo lugar: paleta de colores, tipografías, tamaños, botones, formularios, tarjetas, espaciado y efectos. Referencia rápida para mantener todo consistente.</p>
+  </div>
+</section>
+
+<nav class="kit-nav" aria-label="Navegación de la guía de estilos">
+  <a href="#colores">Colores</a>
+  <a href="#tipografia">Tipografía</a>
+  <a href="#botones">Botones</a>
+  <a href="#formularios">Formularios</a>
+  <a href="#tarjetas">Tarjetas</a>
+  <a href="#espaciado">Espaciado</a>
+  <a href="#transiciones">Transiciones</a>
+  <a href="#iconos">Iconos</a>
+</nav>
+
+<!-- ============================================================
+     COLORES
+     ============================================================ -->
+<section class="seccion kit-seccion" id="colores">
+  <div class="envoltura">
+    <span class="ojo seccion-eyebrow reveal">— Paleta</span>
+    <h2 class="seccion-titulo-f reveal">Colores</h2>
+    <p class="kit-seccion-desc reveal">Paleta oficial y sus alias semánticos, definidos como custom properties en <code>style.css</code> y reutilizados en todo el sitio.</p>
+
+    <div class="kit-color-grid reveal-fila">
+      <div class="kit-color-card reveal" style="--i:0">
+        <div class="kit-color-swatch" style="background: var(--color-hueso);"></div>
+        <span class="kit-color-nombre">Hueso</span>
+        <span class="kit-color-var">--color-hueso</span>
+        <span class="kit-color-hex">#F2EDE1</span>
+      </div>
+      <div class="kit-color-card reveal" style="--i:1">
+        <div class="kit-color-swatch" style="background: var(--color-crudo);"></div>
+        <span class="kit-color-nombre">Crudo</span>
+        <span class="kit-color-var">--color-crudo</span>
+        <span class="kit-color-hex">#E8DFC8</span>
+      </div>
+      <div class="kit-color-card reveal" style="--i:2">
+        <div class="kit-color-swatch" style="background: var(--color-nogal);"></div>
+        <span class="kit-color-nombre">Nogal</span>
+        <span class="kit-color-var">--color-nogal</span>
+        <span class="kit-color-hex">#461514</span>
+      </div>
+      <div class="kit-color-card reveal" style="--i:3">
+        <div class="kit-color-swatch" style="background: var(--color-terracota);"></div>
+        <span class="kit-color-nombre">Terracota</span>
+        <span class="kit-color-var">--color-terracota</span>
+        <span class="kit-color-hex">#EE712E</span>
+      </div>
+      <div class="kit-color-card reveal" style="--i:4">
+        <div class="kit-color-swatch" style="background: var(--color-negro);"></div>
+        <span class="kit-color-nombre">Negro</span>
+        <span class="kit-color-var">--color-negro</span>
+        <span class="kit-color-hex">#0C0C0C</span>
+      </div>
+      <div class="kit-color-card reveal" style="--i:5">
+        <div class="kit-color-swatch" style="background: var(--color-lila);"></div>
+        <span class="kit-color-nombre">Lila</span>
+        <span class="kit-color-var">--color-lila</span>
+        <span class="kit-color-hex">#E0D8E5</span>
+      </div>
+    </div>
+
+    <p class="kit-seccion-desc reveal" style="margin-top: var(--espacio-l);">Alias semánticos: se usan en los componentes en lugar del color crudo, así todo el sitio cambia si se ajusta la paleta.</p>
+    <div class="kit-color-grid reveal-fila">
+      <div class="kit-color-card reveal" style="--i:0">
+        <div class="kit-color-swatch" style="background: var(--naranja);"></div>
+        <span class="kit-color-nombre">Naranja</span>
+        <span class="kit-color-var">--naranja / --terracota</span>
+        <span class="kit-color-hex">= color-terracota</span>
+      </div>
+      <div class="kit-color-card reveal" style="--i:1">
+        <div class="kit-color-swatch" style="background: var(--negro-suave);"></div>
+        <span class="kit-color-nombre">Negro suave</span>
+        <span class="kit-color-var">--negro-suave / --burdeos</span>
+        <span class="kit-color-hex">= color-nogal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TIPOGRAFÍA
+     ============================================================ -->
+<section class="seccion kit-seccion" id="tipografia">
+  <div class="envoltura">
+    <span class="ojo seccion-eyebrow reveal">— Tipografía</span>
+    <h2 class="seccion-titulo-f reveal">Familias y tamaños</h2>
+    <p class="kit-seccion-desc reveal">Tres familias cubren todos los roles: títulos, cuerpo de texto y elementos de interfaz. El isotipo usa una cuarta, exclusiva de la marca.</p>
+
+    <div class="kit-font-grid reveal-fila">
+      <div class="kit-font-card reveal" style="--i:0">
+        <span class="kit-font-rol">Display — Títulos</span>
+        <p class="kit-font-muestra" style="font-family: var(--font-display); font-weight: 900; text-transform: uppercase;">Restauración</p>
+        <span class="kit-font-nombre">Hanken Grotesk · var(--font-display)</span>
+      </div>
+      <div class="kit-font-card reveal" style="--i:1">
+        <span class="kit-font-rol">Body — Cuerpo de texto</span>
+        <p class="kit-font-muestra" style="font-family: var(--font-body); font-weight: 400;">Oficio y diseño</p>
+        <span class="kit-font-nombre">Space Grotesk · var(--font-body)</span>
+      </div>
+      <div class="kit-font-card reveal" style="--i:2">
+        <span class="kit-font-rol">Label — Interfaz / botones</span>
+        <p class="kit-font-muestra" style="font-family: var(--font-label); font-weight: 600; text-transform: uppercase; font-size: 1.4rem; letter-spacing: .04em;">Solicitar</p>
+        <span class="kit-font-nombre">Inter · var(--font-label)</span>
+      </div>
+      <div class="kit-font-card reveal" style="--i:3">
+        <span class="kit-font-rol">Wordmark — Isotipo</span>
+        <p class="kit-font-muestra logo-raiz" style="font-size: 2.4rem;">RAÍZ</p>
+        <span class="kit-font-nombre">aquavit · var(--font-wordmark)</span>
+      </div>
+    </div>
+
+    <p class="kit-seccion-desc reveal" style="margin-bottom: var(--espacio-s);">Escala de tamaños fluida (con <code>clamp()</code>), compartida por todas las secciones del sitio.</p>
+    <div class="reveal-fila">
+      <div class="kit-escala-fila reveal" style="--i:0">
+        <span class="kit-escala-token">--tam-h1</span>
+        <span class="kit-escala-muestra" style="font-size: var(--tam-h1); font-family: var(--font-display);">Aa Título 1</span>
+      </div>
+      <div class="kit-escala-fila reveal" style="--i:1">
+        <span class="kit-escala-token">--tam-h2</span>
+        <span class="kit-escala-muestra" style="font-size: var(--tam-h2); font-family: var(--font-display);">Aa Título 2</span>
+      </div>
+      <div class="kit-escala-fila reveal" style="--i:2">
+        <span class="kit-escala-token">--tam-h3</span>
+        <span class="kit-escala-muestra" style="font-size: var(--tam-h3); font-family: var(--font-display);">Aa Título 3</span>
+      </div>
+      <div class="kit-escala-fila reveal" style="--i:3">
+        <span class="kit-escala-token">--tam-bajada</span>
+        <span class="kit-escala-muestra" style="font-size: var(--tam-bajada); font-family: var(--font-body); font-weight: 300; text-transform: none;">Aa Texto de bajada</span>
+      </div>
+      <div class="kit-escala-fila reveal" style="--i:4">
+        <span class="kit-escala-token">--tam-cuerpo</span>
+        <span class="kit-escala-muestra" style="font-size: var(--tam-cuerpo); font-family: var(--font-body); font-weight: 400; text-transform: none;">Aa Texto de cuerpo</span>
+      </div>
+      <div class="kit-escala-fila reveal" style="--i:5">
+        <span class="kit-escala-token">--tam-label</span>
+        <span class="kit-escala-muestra" style="font-size: var(--tam-label); font-family: var(--font-label); letter-spacing: .1em;">Aa Etiqueta</span>
+      </div>
+      <div class="kit-escala-fila reveal" style="--i:6">
+        <span class="kit-escala-token">--tam-boton</span>
+        <span class="kit-escala-muestra" style="font-size: var(--tam-boton); font-family: var(--font-label); letter-spacing: .1em;">Aa Botón</span>
+      </div>
+      <div class="kit-escala-fila reveal" style="--i:7">
+        <span class="kit-escala-token">--tam-micro</span>
+        <span class="kit-escala-muestra" style="font-size: var(--tam-micro); font-family: var(--font-label); letter-spacing: .06em;">Aa Texto micro</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BOTONES
+     ============================================================ -->
+<section class="seccion kit-seccion" id="botones">
+  <div class="envoltura">
+    <span class="ojo seccion-eyebrow reveal">— Interacción</span>
+    <h2 class="seccion-titulo-f reveal">Botones</h2>
+    <p class="kit-seccion-desc reveal">Un único sistema de botón (<code>.btn</code>) con variantes de color y un modificador de tamaño. Todos comparten transición, radio de pastilla y estado de foco.</p>
+
+    <div class="kit-fila reveal-fila">
+      <span class="kit-etiqueta reveal" style="--i:0">Primario / Secundario / Chico</span>
+      <a href="#" class="btn btn-primary reveal" style="--i:0"><span>Botón primario</span></a>
+      <a href="#" class="btn btn-secondary reveal" style="--i:1"><span>Botón secundario</span></a>
+      <a href="#" class="btn btn-primary btn-small reveal" style="--i:2"><span>Botón chico</span></a>
+    </div>
+
+    <div class="kit-fila reveal-fila">
+      <span class="kit-etiqueta reveal" style="--i:0">Navegación circular / menú</span>
+      <button type="button" class="circulo-nav reveal" style="--i:0" aria-label="Ejemplo anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="circulo-nav reveal" style="--i:1" aria-label="Ejemplo siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <button type="button" class="menu-toggle reveal" style="--i:2; display:inline-flex;">
+        <span>MENÚ</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FORMULARIOS
+     ============================================================ -->
+<section class="seccion kit-seccion" id="formularios">
+  <div class="envoltura">
+    <span class="ojo seccion-eyebrow reveal">— Contacto</span>
+    <h2 class="seccion-titulo-f reveal">Formularios</h2>
+    <p class="kit-seccion-desc reveal">Campos usados en el formulario de contacto: fondo claro sobre panel nogal, subrayado grueso y foco en terracota.</p>
+
+    <div class="kit-form-real cta-contacto__form-panel reveal">
+      <h2 class="titulo-display cta-contacto__titulo">MANDANOS LOS DETALLES DE TU<br>MUEBLE Y EMPEZAMOS EL DIAGNÓSTICO</h2>
+      <form class="cta-contacto__form" onsubmit="return false;">
+        <div class="cta-contacto__campo">
+          <label for="kitNombre">Nombre</label>
+          <input type="text" id="kitNombre" name="nombre" required>
+        </div>
+        <div class="cta-contacto__campo">
+          <label for="kitTelefono">Teléfono</label>
+          <input type="tel" id="kitTelefono" name="telefono">
+        </div>
+        <div class="cta-contacto__campo">
+          <label for="kitEmail">Email</label>
+          <input type="email" id="kitEmail" name="email" required>
+        </div>
+        <div class="cta-contacto__campo">
+          <label for="kitMensaje">Mensaje</label>
+          <textarea id="kitMensaje" name="mensaje" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--nogal-invertido">Enviar consulta</button>
+      </form>
+      <p class="cta-contacto__confirmacion" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TARJETAS
+     ============================================================ -->
+<section class="seccion kit-seccion" id="tarjetas">
+  <div class="envoltura">
+    <span class="ojo seccion-eyebrow reveal">— Contenido</span>
+    <h2 class="seccion-titulo-f reveal">Tarjetas</h2>
+    <p class="kit-seccion-desc reveal">Cards de cursos tal como aparecen en la página principal.</p>
+
+    <div class="kit-cards-grid reveal-fila">
+      <article class="card-oficio card-oficio--destacado reveal" style="--i:0">
+        <div class="card-oficio-imagen">
+          <span class="card-oficio-badge card-oficio-badge--destacado">Destacado</span>
+          <img src="assets/images/curso1.png" alt="Restauración integral de un mueble de madera">
+        </div>
+        <div class="card-oficio-cuerpo">
+          <span class="card-oficio-numero">01</span>
+          <span class="card-oficio-estrellas" aria-label="5 estrellas">★★★★★</span>
+          <h3 class="card-oficio-titulo">Servicio integral de restauración</h3>
+          <p class="card-oficio-descripcion">Diagnóstico, intervención estructural, terminación y criterio estético para restaurar una pieza de principio a fin.</p>
+          <p class="card-oficio-precio">$120.000 ARS</p>
+          <a href="detalle.html" class="card-oficio-enlace">
+            <span>Ver más</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="card-oficio reveal" style="--i:1">
+        <div class="card-oficio-imagen">
+          <img src="assets/images/curso2.png" alt="Manos tejiendo esterilla con fibras naturales">
+        </div>
+        <div class="card-oficio-cuerpo">
+          <span class="card-oficio-numero">02</span>
+          <span class="card-oficio-estrellas" aria-label="5 estrellas">★★★★★</span>
+          <h3 class="card-oficio-titulo">Esterilla y fibras naturales</h3>
+          <p class="card-oficio-descripcion">Técnicas de entramado, reparación y lectura material para piezas con fibras naturales.</p>
+          <p class="card-oficio-precio">$90.000 ARS</p>
+          <a href="#contacto" class="card-oficio-enlace">
+            <span>Ver más</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="card-oficio reveal" style="--i:2">
+        <div class="card-oficio-imagen">
+          <img src="assets/images/curso3.png" alt="Rediseño contemporáneo de un mueble antiguo">
+        </div>
+        <div class="card-oficio-cuerpo">
+          <span class="card-oficio-numero">03</span>
+          <span class="card-oficio-estrellas" aria-label="5 estrellas">★★★★★</span>
+          <h3 class="card-oficio-titulo">Materiales & acabados</h3>
+          <p class="card-oficio-descripcion">Preparación de superficies, combinaciones de terminación y decisiones de color.</p>
+          <p class="card-oficio-precio">$75.000 ARS</p>
+          <a href="#contacto" class="card-oficio-enlace">
+            <span>Ver más</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ESPACIADO
+     ============================================================ -->
+<section class="seccion kit-seccion" id="espaciado">
+  <div class="envoltura">
+    <span class="ojo seccion-eyebrow reveal">— Layout</span>
+    <h2 class="seccion-titulo-f reveal">Espaciado</h2>
+    <p class="kit-seccion-desc reveal">Escala de espaciado usada para gaps, paddings y márgenes en todo el sitio.</p>
+
+    <div class="reveal-fila">
+      <div class="kit-espacio-fila reveal" style="--i:0">
+        <span class="kit-espacio-token">--espacio-xs · .5rem</span>
+        <div class="kit-espacio-barra" style="width: .5rem;"></div>
+      </div>
+      <div class="kit-espacio-fila reveal" style="--i:1">
+        <span class="kit-espacio-token">--espacio-s · 1rem</span>
+        <div class="kit-espacio-barra" style="width: 1rem;"></div>
+      </div>
+      <div class="kit-espacio-fila reveal" style="--i:2">
+        <span class="kit-espacio-token">--espacio-m · 2rem</span>
+        <div class="kit-espacio-barra" style="width: 2rem;"></div>
+      </div>
+      <div class="kit-espacio-fila reveal" style="--i:3">
+        <span class="kit-espacio-token">--espacio-l · 4rem</span>
+        <div class="kit-espacio-barra" style="width: 4rem;"></div>
+      </div>
+      <div class="kit-espacio-fila reveal" style="--i:4">
+        <span class="kit-espacio-token">--espacio-xl · 7rem</span>
+        <div class="kit-espacio-barra" style="width: 7rem;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRANSICIONES
+     ============================================================ -->
+<section class="seccion kit-seccion" id="transiciones">
+  <div class="envoltura">
+    <span class="ojo seccion-eyebrow reveal">— Movimiento</span>
+    <h2 class="seccion-titulo-f reveal">Transiciones y efectos</h2>
+    <p class="kit-seccion-desc reveal">Tres velocidades de easing comparten curva (<code>cubic-bezier(.22,.68,.32,1)</code>). Pasá el mouse para sentir la diferencia. El scroll de esta página también dispara el efecto <code>.reveal</code> que aparece en cada sección.</p>
+
+    <div class="kit-transiciones-grid reveal-fila">
+      <div class="kit-transicion kit-transicion--rapida reveal" style="--i:0">
+        <strong>Rápida</strong>
+        <span>--t-rapida · .35s</span>
+      </div>
+      <div class="kit-transicion kit-transicion--media reveal" style="--i:1">
+        <strong>Media</strong>
+        <span>--t-media · .6s</span>
+      </div>
+      <div class="kit-transicion kit-transicion--lenta reveal" style="--i:2">
+        <strong>Lenta</strong>
+        <span>--t-lenta · 1.1s</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ICONOS
+     ============================================================ -->
+<section class="seccion kit-seccion" id="iconos">
+  <div class="envoltura">
+    <span class="ojo seccion-eyebrow reveal">— Íconos</span>
+    <h2 class="seccion-titulo-f reveal">Iconografía</h2>
+    <p class="kit-seccion-desc reveal">Set de interfaz (trazo simple, se tiñen con <code>mask</code> del color que necesiten) y set de redes sociales (color de marca fijo).</p>
+
+    <div class="kit-iconos-grid reveal-fila">
+      <div class="kit-icono-item reveal" style="--i:0">
+        <span class="kit-icono" style="--icono:url('assets/icons/madera.svg')" aria-hidden="true"></span>
+        <span>Madera</span>
+      </div>
+      <div class="kit-icono-item reveal" style="--i:1">
+        <span class="kit-icono" style="--icono:url('assets/icons/compas.svg')" aria-hidden="true"></span>
+        <span>Compás</span>
+      </div>
+      <div class="kit-icono-item reveal" style="--i:2">
+        <span class="kit-icono" style="--icono:url('assets/icons/reciclaje.svg')" aria-hidden="true"></span>
+        <span>Reciclaje</span>
+      </div>
+      <div class="kit-icono-item reveal" style="--i:3">
+        <span class="kit-icono" style="--icono:url('assets/icons/reloj.svg')" aria-hidden="true"></span>
+        <span>Reloj</span>
+      </div>
+      <div class="kit-icono-item reveal" style="--i:4">
+        <span class="kit-icono" style="--icono:url('assets/icons/check.svg.svg')" aria-hidden="true"></span>
+        <span>Check</span>
+      </div>
+      <div class="kit-icono-item reveal" style="--i:5">
+        <span class="kit-icono" style="--icono:url('assets/icons/calendario.svg.svg')" aria-hidden="true"></span>
+        <span>Calendario</span>
+      </div>
+      <div class="kit-icono-item reveal" style="--i:6">
+        <span class="kit-icono" style="--icono:url('assets/icons/grupo.svg.svg')" aria-hidden="true"></span>
+        <span>Grupo</span>
+      </div>
+      <div class="kit-icono-item reveal" style="--i:7">
+        <span class="kit-icono" style="--icono:url('assets/icons/nivel.svg.svg')" aria-hidden="true"></span>
+        <span>Nivel</span>
+      </div>
+      <div class="kit-icono-item reveal" style="--i:8">
+        <span class="kit-icono" style="--icono:url('assets/icons/taller.svg.svg')" aria-hidden="true"></span>
+        <span>Taller</span>
+      </div>
+    </div>
+
+    <div class="kit-iconos-grid reveal-fila" style="margin-top: var(--espacio-m);">
+      <div class="kit-icono-item reveal" style="--i:0">
+        <img src="assets/icons/facebook.svg.svg" alt="" aria-hidden="true" style="width:2rem;height:2rem;">
+        <span>Facebook</span>
+      </div>
+      <div class="kit-icono-item reveal" style="--i:1">
+        <img src="assets/icons/instagram.svg.svg" alt="" aria-hidden="true" style="width:2rem;height:2rem;">
+        <span>Instagram</span>
+      </div>
+      <div class="kit-icono-item reveal" style="--i:2">
+        <img src="assets/icons/tiktok.svg.svg" alt="" aria-hidden="true" style="width:2rem;height:2rem;">
+        <span>TikTok</span>
+      </div>
+      <div class="kit-icono-item reveal" style="--i:3">
+        <img src="assets/icons/pinterest.svg.svg" alt="" aria-hidden="true" style="width:2rem;height:2rem;">
+        <span>Pinterest</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<button class="volver-arriba" id="volverArriba" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<div class="site-menu-overlay" data-menu-close hidden></div>
+<aside class="site-menu" id="siteMenu" aria-hidden="true" aria-label="Menú principal">
+  <button class="site-menu__close" type="button" data-menu-close aria-label="Cerrar menú"></button>
+  <nav class="site-menu__nav">
+    <a href="index.html#hero" class="site-menu__link">Inicio</a>
+    <a href="index.html#oficios" class="site-menu__link">Cursos</a>
+    <a href="index.html#materiales" class="site-menu__link">Materiales</a>
+    <a href="index.html#capsula" class="site-menu__link">Muebles Cápsula</a>
+    <a href="index.html#manifiesto" class="site-menu__link">Nosotros</a>
+    <a href="index.html#contacto" class="site-menu__link">Contacto</a>
+  </nav>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
