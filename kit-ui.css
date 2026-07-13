@@ -38,7 +38,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--espacio-xs) var(--espacio-m);
-  padding: var(--espacio-s) 0;
+  padding: var(--espacio-s) clamp(1.25rem, 8vw, 10rem);
   background: color-mix(in srgb, var(--color-hueso) 92%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid color-mix(in srgb, var(--color-nogal) 12%, transparent);
@@ -277,7 +277,10 @@
 }
 
 @media (max-width: 720px){
-  .kit-nav{ top: 0; }
+  .kit-nav{
+    top: 0;
+    padding-inline: var(--espacio-s);
+  }
   .kit-escala-fila{ grid-template-columns: 5.5rem 1fr; }
   .kit-cards-grid{ grid-template-columns: 1fr; }
   .kit-form-real{ width: 100%; }
