@@ -15,6 +15,25 @@
 <body>
 
 <!-- ============================================================
+     ANNOUNCEMENT BAR — aviso superior, cerrable y persistente
+     ============================================================ -->
+<div class="announcement-bar" id="announcementBar">
+  <p class="announcement-bar__texto">Recomendá a un amigo y obtené un <strong class="announcement-bar__resaltado">20% OFF</strong> en nuestros cursos.</p>
+  <button type="button" class="announcement-bar__cerrar" id="announcementBarCerrar" aria-label="Cerrar aviso">
+    <span aria-hidden="true"></span>
+  </button>
+</div>
+<script>
+  (function () {
+    try {
+      if (localStorage.getItem('raiz-announcement-cerrado') === '1') {
+        document.documentElement.classList.add('anuncio-cerrado');
+      }
+    } catch (error) { /* localStorage no disponible: el aviso simplemente se muestra. */ }
+  })();
+</script>
+
+<!-- ============================================================
      HEADER - idéntico al de home.html para mantener identidad
      ============================================================ -->
 <header class="header" id="header">

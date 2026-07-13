@@ -16,6 +16,25 @@
 <body>
 
 <!-- ============================================================
+     ANNOUNCEMENT BAR — aviso superior, cerrable y persistente
+     ============================================================ -->
+<div class="announcement-bar" id="announcementBar">
+  <p class="announcement-bar__texto">Recomendá a un amigo y obtené un <strong class="announcement-bar__resaltado">20% OFF</strong> en nuestros cursos.</p>
+  <button type="button" class="announcement-bar__cerrar" id="announcementBarCerrar" aria-label="Cerrar aviso">
+    <span aria-hidden="true"></span>
+  </button>
+</div>
+<script>
+  (function () {
+    try {
+      if (localStorage.getItem('raiz-announcement-cerrado') === '1') {
+        document.documentElement.classList.add('anuncio-cerrado');
+      }
+    } catch (error) { /* localStorage no disponible: el aviso simplemente se muestra. */ }
+  })();
+</script>
+
+<!-- ============================================================
      HEADER - idéntico al del resto del sitio para mantener identidad
      ============================================================ -->
 <header class="header" id="header">
@@ -408,7 +427,7 @@
         <span class="kit-icono" style="--icono:url('assets/icons/reloj.svg')" aria-hidden="true"></span>
         <span>Reloj</span>
       </div>
-      <div class="kit-icono-item reveal" style="--i:4">
+      <div class="kit-icono-item reveal" style="--i:4; grid-column: 1;">
         <span class="kit-icono" style="--icono:url('assets/icons/check.svg.svg')" aria-hidden="true"></span>
         <span>Check</span>
       </div>

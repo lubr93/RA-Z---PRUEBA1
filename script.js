@@ -237,6 +237,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- 2b. ANNOUNCEMENT BAR ---------- */
+  const announcementBarCerrar = document.getElementById('announcementBarCerrar');
+  const ANNOUNCEMENT_KEY = 'raiz-announcement-cerrado';
+
+  if (announcementBarCerrar) {
+    announcementBarCerrar.addEventListener('click', () => {
+      document.documentElement.classList.add('anuncio-cerrado');
+      try {
+        localStorage.setItem(ANNOUNCEMENT_KEY, '1');
+      } catch (error) { /* localStorage no disponible: el cierre no persiste, sin problema. */ }
+    });
+  }
+
   /* ---------- 3. HEADER FIJO ---------- */
   const header = document.getElementById('header');
 
